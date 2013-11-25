@@ -5,9 +5,17 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'mysql2', '~> 0.3.11'
-gem 'therubyracer'
+group :development do
+  gem 'sqlite3'
+end
+
+platforms :ruby do
+  group :production do
+    gem 'therubyracer'
+    gem 'mysql2', '~> 0.3.11'
+    gem 'activerecord-mysql2-adapter'
+  end
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
