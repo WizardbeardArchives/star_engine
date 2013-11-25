@@ -170,6 +170,7 @@ DEPENDENCIES
   better_errors
   coffee-rails (~> 3.2.1)
   jquery-rails
+  meta_search (>= 1.1.0.pre)
   mysql2 (~> 0.3.11)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
