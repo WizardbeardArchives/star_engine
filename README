@@ -1,0 +1,10 @@
+Star Engine is an Open Source alternative to the Clients and Profits creative agency management application.
+
+1.  Why?
+Clients and Profits has been in business quite a long time, and has gained a large amount of traction.  Although the canned reports are useful, they don't fulfill everyone's needs all of the time.  Extending Clients and Profits requires the use of proprietary development tools (Tiger Logic OMNIS).
+
+2.  How?
+Star Engine is built using Ruby on Rails giving you the flexibility to deploy and customize this application according to your business needs.  By creating a data compatible version of CnP built on Ruby on Rails, you are now free to use any database supported by Active Record.
+
+3.  License?
+Star Engine is released under the GNU Affero General Public License.
