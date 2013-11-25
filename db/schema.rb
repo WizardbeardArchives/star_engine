@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20131125212948) do
 
   create_table "ACCESS_PRIVS", :primary_key => "ACS_SEQ", :force => true do |t|
     t.string  "ACS_CLIENT_NUM", :limit => 10
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "ACS_PRINT",      :limit => 1
   end
 
-  add_index "access_privs", ["ACS_CLIENT_NUM"], :name => "ACS_CLIENT_NUM"
-  add_index "access_privs", ["ACS_INITIALS"], :name => "ACS_INITIALS"
-  add_index "access_privs", ["ACS_KEY"], :name => "ACS_KEY"
-  add_index "access_privs", ["ACS_SEQ"], :name => "ACS_SEQ", :unique => true
+  add_index "ACCESS_PRIVS", ["ACS_CLIENT_NUM"], :name => "ACS_CLIENT_NUM"
+  add_index "ACCESS_PRIVS", ["ACS_INITIALS"], :name => "ACS_INITIALS"
+  add_index "ACCESS_PRIVS", ["ACS_KEY"], :name => "ACS_KEY"
+  add_index "ACCESS_PRIVS", ["ACS_SEQ"], :name => "ACS_SEQ", :unique => true
 
   create_table "ACCOUNTS", :primary_key => "AC_SEQ", :force => true do |t|
     t.decimal  "AC_NUM",                           :precision => 15, :scale => 2
@@ -128,16 +128,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.decimal  "AC_ONLINE_PMT_NUM",                :precision => 9,  :scale => 0
   end
 
-  add_index "accounts", ["AC_ADDED_WHEN"], :name => "AC_ADDED_WHEN"
-  add_index "accounts", ["AC_AP_CONTROL"], :name => "AC_AP_CONTROL"
-  add_index "accounts", ["AC_AR_CONTROL"], :name => "AC_AR_CONTROL"
-  add_index "accounts", ["AC_CF"], :name => "AC_CF"
-  add_index "accounts", ["AC_CLASS"], :name => "AC_CLASS"
-  add_index "accounts", ["AC_NAME"], :name => "AC_NAME"
-  add_index "accounts", ["AC_NUM"], :name => "AC_NUM"
-  add_index "accounts", ["AC_PC"], :name => "AC_PC"
-  add_index "accounts", ["AC_ROLLUP_ONLY"], :name => "AC_ROLLUP_ONLY"
-  add_index "accounts", ["AC_SEQ"], :name => "AC_SEQ", :unique => true
+  add_index "ACCOUNTS", ["AC_ADDED_WHEN"], :name => "AC_ADDED_WHEN"
+  add_index "ACCOUNTS", ["AC_AP_CONTROL"], :name => "AC_AP_CONTROL"
+  add_index "ACCOUNTS", ["AC_AR_CONTROL"], :name => "AC_AR_CONTROL"
+  add_index "ACCOUNTS", ["AC_CF"], :name => "AC_CF"
+  add_index "ACCOUNTS", ["AC_CLASS"], :name => "AC_CLASS"
+  add_index "ACCOUNTS", ["AC_NAME"], :name => "AC_NAME"
+  add_index "ACCOUNTS", ["AC_NUM"], :name => "AC_NUM"
+  add_index "ACCOUNTS", ["AC_PC"], :name => "AC_PC"
+  add_index "ACCOUNTS", ["AC_ROLLUP_ONLY"], :name => "AC_ROLLUP_ONLY"
+  add_index "ACCOUNTS", ["AC_SEQ"], :name => "AC_SEQ", :unique => true
 
   create_table "ACCT_PERIODS", :id => false, :force => true do |t|
     t.string  "PERIOD_ID",        :limit => 4
@@ -195,7 +195,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "PERIOD_FY2_NAME",  :limit => 15
   end
 
-  add_index "acct_periods", ["PERIOD_ID"], :name => "PERIOD_ID"
+  add_index "ACCT_PERIODS", ["PERIOD_ID"], :name => "PERIOD_ID"
 
   create_table "ADDRESSES", :primary_key => "ADR_SEQ", :force => true do |t|
     t.string   "ADR_CLIENT_NUM",  :limit => 10
@@ -219,9 +219,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "ADR_EDITED_WHEN"
   end
 
-  add_index "addresses", ["ADR_CLIENT_NUM"], :name => "ADR_CLIENT_NUM"
-  add_index "addresses", ["ADR_NAME"], :name => "ADR_NAME"
-  add_index "addresses", ["ADR_SEQ"], :name => "ADR_SEQ", :unique => true
+  add_index "ADDRESSES", ["ADR_CLIENT_NUM"], :name => "ADR_CLIENT_NUM"
+  add_index "ADDRESSES", ["ADR_NAME"], :name => "ADR_NAME"
+  add_index "ADDRESSES", ["ADR_SEQ"], :name => "ADR_SEQ", :unique => true
 
   create_table "AP", :primary_key => "AP_SEQ", :force => true do |t|
     t.string   "AP_NUM",             :limit => 20
@@ -275,16 +275,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "AP_PAID_ONLINE",     :limit => 1
   end
 
-  add_index "ap", ["AP_AUTO_PAY"], :name => "AP_AUTO_PAY"
-  add_index "ap", ["AP_DATE"], :name => "AP_DATE"
-  add_index "ap", ["AP_EDITED_BY"], :name => "AP_EDITED_BY"
-  add_index "ap", ["AP_KEY"], :name => "AP_KEY"
-  add_index "ap", ["AP_NUM"], :name => "AP_NUM"
-  add_index "ap", ["AP_PAY_DATE"], :name => "AP_PAY_DATE"
-  add_index "ap", ["AP_POSTED"], :name => "AP_POSTED"
-  add_index "ap", ["AP_SEQ"], :name => "AP_SEQ", :unique => true
-  add_index "ap", ["AP_UNPAID"], :name => "AP_UNPAID"
-  add_index "ap", ["AP_VENDOR_NUM"], :name => "AP_VENDOR_NUM"
+  add_index "AP", ["AP_AUTO_PAY"], :name => "AP_AUTO_PAY"
+  add_index "AP", ["AP_DATE"], :name => "AP_DATE"
+  add_index "AP", ["AP_EDITED_BY"], :name => "AP_EDITED_BY"
+  add_index "AP", ["AP_KEY"], :name => "AP_KEY"
+  add_index "AP", ["AP_NUM"], :name => "AP_NUM"
+  add_index "AP", ["AP_PAY_DATE"], :name => "AP_PAY_DATE"
+  add_index "AP", ["AP_POSTED"], :name => "AP_POSTED"
+  add_index "AP", ["AP_SEQ"], :name => "AP_SEQ", :unique => true
+  add_index "AP", ["AP_UNPAID"], :name => "AP_UNPAID"
+  add_index "AP", ["AP_VENDOR_NUM"], :name => "AP_VENDOR_NUM"
 
   create_table "APPROVALS", :primary_key => "APPR_SEQ", :force => true do |t|
     t.string   "APPR_ADDED_BY",       :limit => 4
@@ -314,14 +314,14 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "APPR_EDITED_WHEN"
   end
 
-  add_index "approvals", ["APPR_ADDED_BY"], :name => "APPR_ADDED_BY"
-  add_index "approvals", ["APPR_CLIENT_NUM"], :name => "APPR_CLIENT_NUM"
-  add_index "approvals", ["APPR_DATE_EXPIRES"], :name => "APPR_DATE_EXPIRES"
-  add_index "approvals", ["APPR_ID"], :name => "APPR_ID"
-  add_index "approvals", ["APPR_JOB_NUM"], :name => "APPR_JOB_NUM"
-  add_index "approvals", ["APPR_KIND"], :name => "APPR_KIND"
-  add_index "approvals", ["APPR_NEEDED_BY"], :name => "APPR_NEEDED_BY"
-  add_index "approvals", ["APPR_SEQ"], :name => "APPR_SEQ", :unique => true
+  add_index "APPROVALS", ["APPR_ADDED_BY"], :name => "APPR_ADDED_BY"
+  add_index "APPROVALS", ["APPR_CLIENT_NUM"], :name => "APPR_CLIENT_NUM"
+  add_index "APPROVALS", ["APPR_DATE_EXPIRES"], :name => "APPR_DATE_EXPIRES"
+  add_index "APPROVALS", ["APPR_ID"], :name => "APPR_ID"
+  add_index "APPROVALS", ["APPR_JOB_NUM"], :name => "APPR_JOB_NUM"
+  add_index "APPROVALS", ["APPR_KIND"], :name => "APPR_KIND"
+  add_index "APPROVALS", ["APPR_NEEDED_BY"], :name => "APPR_NEEDED_BY"
+  add_index "APPROVALS", ["APPR_SEQ"], :name => "APPR_SEQ", :unique => true
 
   create_table "APPROVALS_ITEMS", :primary_key => "APPRX_SEQ", :force => true do |t|
     t.string  "APPRX_ID",          :limit => 20
@@ -331,16 +331,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.text    "APPRX_STATUS_NOTE"
   end
 
-  add_index "approvals_items", ["APPRX_ID"], :name => "APPRX_ID"
-  add_index "approvals_items", ["APPRX_SEQ"], :name => "APPRX_SEQ", :unique => true
+  add_index "APPROVALS_ITEMS", ["APPRX_ID"], :name => "APPRX_ID"
+  add_index "APPROVALS_ITEMS", ["APPRX_SEQ"], :name => "APPRX_SEQ", :unique => true
 
   create_table "AP_PDFS", :primary_key => "AP_PDF_SEQ", :force => true do |t|
     t.string "AP_PDF_KEY",    :limit => 30
     t.binary "AP_PDF_BINARY", :limit => 16777215
   end
 
-  add_index "ap_pdfs", ["AP_PDF_KEY"], :name => "AP_PDF_KEY"
-  add_index "ap_pdfs", ["AP_PDF_SEQ"], :name => "AP_PDF_SEQ", :unique => true
+  add_index "AP_PDFS", ["AP_PDF_KEY"], :name => "AP_PDF_KEY"
+  add_index "AP_PDFS", ["AP_PDF_SEQ"], :name => "AP_PDF_SEQ", :unique => true
 
   create_table "AR", :primary_key => "AR_SEQ", :force => true do |t|
     t.string   "AR_NUM",                :limit => 10
@@ -459,25 +459,25 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "AR_SHIP_ORG",           :limit => 50
   end
 
-  add_index "ar", ["AR_ADDED_BY"], :name => "AR_ADDED_BY"
-  add_index "ar", ["AR_AE"], :name => "AR_AE"
-  add_index "ar", ["AR_BILLING_TYPE"], :name => "AR_BILLING_TYPE"
-  add_index "ar", ["AR_CLIENT_NUM"], :name => "AR_CLIENT_NUM"
-  add_index "ar", ["AR_DATE"], :name => "AR_DATE"
-  add_index "ar", ["AR_DATE_PAID"], :name => "AR_DATE_PAID"
-  add_index "ar", ["AR_DUE_DATE"], :name => "AR_DUE_DATE"
-  add_index "ar", ["AR_JOB_NUM"], :name => "AR_JOB_NUM"
-  add_index "ar", ["AR_KEY"], :name => "AR_KEY"
-  add_index "ar", ["AR_NUM"], :name => "AR_NUM"
-  add_index "ar", ["AR_PC"], :name => "AR_PC"
-  add_index "ar", ["AR_PERIOD"], :name => "AR_PERIOD"
-  add_index "ar", ["AR_PMT_NEXT_ACTION"], :name => "AR_PMT_NEXT_ACTION"
-  add_index "ar", ["AR_PMT_NEXT_DATE"], :name => "AR_PMT_NEXT_DATE"
-  add_index "ar", ["AR_PMT_STATUS"], :name => "AR_PMT_STATUS"
-  add_index "ar", ["AR_PO"], :name => "AR_PO"
-  add_index "ar", ["AR_POSTED"], :name => "AR_POSTED"
-  add_index "ar", ["AR_SEQ"], :name => "AR_SEQ", :unique => true
-  add_index "ar", ["AR_UNPAID"], :name => "AR_UNPAID"
+  add_index "AR", ["AR_ADDED_BY"], :name => "AR_ADDED_BY"
+  add_index "AR", ["AR_AE"], :name => "AR_AE"
+  add_index "AR", ["AR_BILLING_TYPE"], :name => "AR_BILLING_TYPE"
+  add_index "AR", ["AR_CLIENT_NUM"], :name => "AR_CLIENT_NUM"
+  add_index "AR", ["AR_DATE"], :name => "AR_DATE"
+  add_index "AR", ["AR_DATE_PAID"], :name => "AR_DATE_PAID"
+  add_index "AR", ["AR_DUE_DATE"], :name => "AR_DUE_DATE"
+  add_index "AR", ["AR_JOB_NUM"], :name => "AR_JOB_NUM"
+  add_index "AR", ["AR_KEY"], :name => "AR_KEY"
+  add_index "AR", ["AR_NUM"], :name => "AR_NUM"
+  add_index "AR", ["AR_PC"], :name => "AR_PC"
+  add_index "AR", ["AR_PERIOD"], :name => "AR_PERIOD"
+  add_index "AR", ["AR_PMT_NEXT_ACTION"], :name => "AR_PMT_NEXT_ACTION"
+  add_index "AR", ["AR_PMT_NEXT_DATE"], :name => "AR_PMT_NEXT_DATE"
+  add_index "AR", ["AR_PMT_STATUS"], :name => "AR_PMT_STATUS"
+  add_index "AR", ["AR_PO"], :name => "AR_PO"
+  add_index "AR", ["AR_POSTED"], :name => "AR_POSTED"
+  add_index "AR", ["AR_SEQ"], :name => "AR_SEQ", :unique => true
+  add_index "AR", ["AR_UNPAID"], :name => "AR_UNPAID"
 
   create_table "ARCHIVED_JOBS", :primary_key => "AJ_SEQ", :force => true do |t|
     t.string "AJ_JOB_NUM",  :limit => 10
@@ -489,8 +489,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.text   "AJ_REF"
   end
 
-  add_index "archived_jobs", ["AJ_JOB_NUM"], :name => "AJ_JOB_NUM"
-  add_index "archived_jobs", ["AJ_SEQ"], :name => "AJ_SEQ", :unique => true
+  add_index "ARCHIVED_JOBS", ["AJ_JOB_NUM"], :name => "AJ_JOB_NUM"
+  add_index "ARCHIVED_JOBS", ["AJ_SEQ"], :name => "AJ_SEQ", :unique => true
 
   create_table "AR_ITEMS", :primary_key => "AX_SEQ", :force => true do |t|
     t.string   "AX_JOB_NUM",        :limit => 10
@@ -526,14 +526,14 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "AX_EDITED_WHEN"
   end
 
-  add_index "ar_items", ["AX_AR_NUM"], :name => "AX_AR_NUM"
-  add_index "ar_items", ["AX_DATE"], :name => "AX_DATE"
-  add_index "ar_items", ["AX_JOB_NUM"], :name => "AX_JOB_NUM"
-  add_index "ar_items", ["AX_PERIOD"], :name => "AX_PERIOD"
-  add_index "ar_items", ["AX_POSTED"], :name => "AX_POSTED"
-  add_index "ar_items", ["AX_POX_KEY"], :name => "AX_POX_KEY"
-  add_index "ar_items", ["AX_SEQ"], :name => "AX_SEQ", :unique => true
-  add_index "ar_items", ["AX_TASK"], :name => "AX_TASK"
+  add_index "AR_ITEMS", ["AX_AR_NUM"], :name => "AX_AR_NUM"
+  add_index "AR_ITEMS", ["AX_DATE"], :name => "AX_DATE"
+  add_index "AR_ITEMS", ["AX_JOB_NUM"], :name => "AX_JOB_NUM"
+  add_index "AR_ITEMS", ["AX_PERIOD"], :name => "AX_PERIOD"
+  add_index "AR_ITEMS", ["AX_POSTED"], :name => "AX_POSTED"
+  add_index "AR_ITEMS", ["AX_POX_KEY"], :name => "AX_POX_KEY"
+  add_index "AR_ITEMS", ["AX_SEQ"], :name => "AX_SEQ", :unique => true
+  add_index "AR_ITEMS", ["AX_TASK"], :name => "AX_TASK"
 
   create_table "ASSETS_FILES", :primary_key => "ASF_SEQ", :force => true do |t|
     t.string   "ASF_JOB_NUM",           :limit => 10
@@ -570,12 +570,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "ASF_EDITED_WHEN"
   end
 
-  add_index "assets_files", ["ASF_FILE_NAME"], :name => "ASF_FILE_NAME"
-  add_index "assets_files", ["ASF_JOB_NUM"], :name => "ASF_JOB_NUM"
-  add_index "assets_files", ["ASF_KEYWORD1"], :name => "ASF_KEYWORD1"
-  add_index "assets_files", ["ASF_KEYWORD2"], :name => "ASF_KEYWORD2"
-  add_index "assets_files", ["ASF_KEYWORD3"], :name => "ASF_KEYWORD3"
-  add_index "assets_files", ["ASF_SEQ"], :name => "ASF_SEQ", :unique => true
+  add_index "ASSETS_FILES", ["ASF_FILE_NAME"], :name => "ASF_FILE_NAME"
+  add_index "ASSETS_FILES", ["ASF_JOB_NUM"], :name => "ASF_JOB_NUM"
+  add_index "ASSETS_FILES", ["ASF_KEYWORD1"], :name => "ASF_KEYWORD1"
+  add_index "ASSETS_FILES", ["ASF_KEYWORD2"], :name => "ASF_KEYWORD2"
+  add_index "ASSETS_FILES", ["ASF_KEYWORD3"], :name => "ASF_KEYWORD3"
+  add_index "ASSETS_FILES", ["ASF_SEQ"], :name => "ASF_SEQ", :unique => true
 
   create_table "ASSETS_PREFS", :primary_key => "ASP_SEQ", :force => true do |t|
     t.string   "ASP_CODE",          :limit => 4
@@ -595,8 +595,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "ASP_ORG_BY_CLIENT", :limit => 1
   end
 
-  add_index "assets_prefs", ["ASP_CODE"], :name => "ASP_CODE"
-  add_index "assets_prefs", ["ASP_SEQ"], :name => "ASP_SEQ", :unique => true
+  add_index "ASSETS_PREFS", ["ASP_CODE"], :name => "ASP_CODE"
+  add_index "ASSETS_PREFS", ["ASP_SEQ"], :name => "ASP_SEQ", :unique => true
 
   create_table "ASSETS_TYPES", :primary_key => "AST_SEQ", :force => true do |t|
     t.string  "AST_FILE_EXT", :limit => 4
@@ -608,11 +608,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "AST_KIND",     :limit => 1
   end
 
-  add_index "assets_types", ["AST_APP_NAME"], :name => "AST_APP_NAME"
-  add_index "assets_types", ["AST_CREATOR"], :name => "AST_CREATOR"
-  add_index "assets_types", ["AST_FILE_EXT"], :name => "AST_FILE_EXT"
-  add_index "assets_types", ["AST_SEQ"], :name => "AST_SEQ", :unique => true
-  add_index "assets_types", ["AST_USER"], :name => "AST_USER"
+  add_index "ASSETS_TYPES", ["AST_APP_NAME"], :name => "AST_APP_NAME"
+  add_index "ASSETS_TYPES", ["AST_CREATOR"], :name => "AST_CREATOR"
+  add_index "ASSETS_TYPES", ["AST_FILE_EXT"], :name => "AST_FILE_EXT"
+  add_index "ASSETS_TYPES", ["AST_SEQ"], :name => "AST_SEQ", :unique => true
+  add_index "ASSETS_TYPES", ["AST_USER"], :name => "AST_USER"
 
   create_table "AVAIL", :primary_key => "AV_SEQ", :force => true do |t|
     t.string   "AV_INITIALS",   :limit => 10
@@ -627,11 +627,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "AV_EDIT_WHEN"
   end
 
-  add_index "avail", ["AV_ADDED_WHEN"], :name => "AV_ADDED_WHEN"
-  add_index "avail", ["AV_DATE"], :name => "AV_DATE"
-  add_index "avail", ["AV_INITIALS"], :name => "AV_INITIALS"
-  add_index "avail", ["AV_KEY"], :name => "AV_KEY"
-  add_index "avail", ["AV_SEQ"], :name => "AV_SEQ", :unique => true
+  add_index "AVAIL", ["AV_ADDED_WHEN"], :name => "AV_ADDED_WHEN"
+  add_index "AVAIL", ["AV_DATE"], :name => "AV_DATE"
+  add_index "AVAIL", ["AV_INITIALS"], :name => "AV_INITIALS"
+  add_index "AVAIL", ["AV_KEY"], :name => "AV_KEY"
+  add_index "AVAIL", ["AV_SEQ"], :name => "AV_SEQ", :unique => true
 
   create_table "BILLING_INFO", :primary_key => "B_SEQ", :force => true do |t|
     t.string   "B_JOB_NUM",     :limit => 10
@@ -666,8 +666,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "B_EDITED_WHEN"
   end
 
-  add_index "billing_info", ["B_JOB_NUM"], :name => "B_JOB_NUM"
-  add_index "billing_info", ["B_SEQ"], :name => "B_SEQ", :unique => true
+  add_index "BILLING_INFO", ["B_JOB_NUM"], :name => "B_JOB_NUM"
+  add_index "BILLING_INFO", ["B_SEQ"], :name => "B_SEQ", :unique => true
 
   create_table "CAL", :primary_key => "CL_SEQ", :force => true do |t|
     t.string  "CL_MONTH", :limit => 20
@@ -758,8 +758,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "CL_CAL42", :limit => 100
   end
 
-  add_index "cal", ["CL_DAY02"], :name => "CL_DAY02"
-  add_index "cal", ["CL_SEQ"], :name => "CL_SEQ", :unique => true
+  add_index "CAL", ["CL_DAY02"], :name => "CL_DAY02"
+  add_index "CAL", ["CL_SEQ"], :name => "CL_SEQ", :unique => true
 
   create_table "CALENDAR", :primary_key => "CAL_SEQ", :force => true do |t|
     t.integer "CAL_KIND",        :limit => 1
@@ -780,11 +780,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "CAL_LOCATION",    :limit => 25
   end
 
-  add_index "calendar", ["CAL_CLIENT_NUM"], :name => "CAL_CLIENT_NUM"
-  add_index "calendar", ["CAL_DATE"], :name => "CAL_DATE"
-  add_index "calendar", ["CAL_ID"], :name => "CAL_ID"
-  add_index "calendar", ["CAL_KIND"], :name => "CAL_KIND"
-  add_index "calendar", ["CAL_SEQ"], :name => "CAL_SEQ", :unique => true
+  add_index "CALENDAR", ["CAL_CLIENT_NUM"], :name => "CAL_CLIENT_NUM"
+  add_index "CALENDAR", ["CAL_DATE"], :name => "CAL_DATE"
+  add_index "CALENDAR", ["CAL_ID"], :name => "CAL_ID"
+  add_index "CALENDAR", ["CAL_KIND"], :name => "CAL_KIND"
+  add_index "CALENDAR", ["CAL_SEQ"], :name => "CAL_SEQ", :unique => true
 
   create_table "CHANGE_ITEMS", :primary_key => "CHX_SEQ", :force => true do |t|
     t.string   "CHX_JOB_NUM",     :limit => 10
@@ -804,9 +804,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "CHX_EDITED_WHEN"
   end
 
-  add_index "change_items", ["CHX_JOB_NUM"], :name => "CHX_JOB_NUM"
-  add_index "change_items", ["CHX_NUM"], :name => "CHX_NUM"
-  add_index "change_items", ["CHX_SEQ"], :name => "CHX_SEQ", :unique => true
+  add_index "CHANGE_ITEMS", ["CHX_JOB_NUM"], :name => "CHX_JOB_NUM"
+  add_index "CHANGE_ITEMS", ["CHX_NUM"], :name => "CHX_NUM"
+  add_index "CHANGE_ITEMS", ["CHX_SEQ"], :name => "CHX_SEQ", :unique => true
 
   create_table "CHANGE_ORDER", :primary_key => "CHANGE_SEQ", :force => true do |t|
     t.string   "CHANGE_JOB_NUM",       :limit => 10
@@ -866,11 +866,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "CHANGE_ADDED_WHEN"
   end
 
-  add_index "change_order", ["CHANGE_DATE"], :name => "CHANGE_DATE"
-  add_index "change_order", ["CHANGE_JOB_NUM"], :name => "CHANGE_JOB_NUM"
-  add_index "change_order", ["CHANGE_NUM"], :name => "CHANGE_NUM"
-  add_index "change_order", ["CHANGE_OK"], :name => "CHANGE_OK"
-  add_index "change_order", ["CHANGE_SEQ"], :name => "CHANGE_SEQ", :unique => true
+  add_index "CHANGE_ORDER", ["CHANGE_DATE"], :name => "CHANGE_DATE"
+  add_index "CHANGE_ORDER", ["CHANGE_JOB_NUM"], :name => "CHANGE_JOB_NUM"
+  add_index "CHANGE_ORDER", ["CHANGE_NUM"], :name => "CHANGE_NUM"
+  add_index "CHANGE_ORDER", ["CHANGE_OK"], :name => "CHANGE_OK"
+  add_index "CHANGE_ORDER", ["CHANGE_SEQ"], :name => "CHANGE_SEQ", :unique => true
 
   create_table "CHECKS", :primary_key => "CK_SEQ", :force => true do |t|
     t.decimal  "CK_NUM",                                  :precision => 9,  :scale => 0
@@ -907,20 +907,20 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "CK_ONLINE_PMT_CONFIRM_NUM", :limit => 50
   end
 
-  add_index "checks", ["CK_1099"], :name => "CK_1099"
-  add_index "checks", ["CK_ADDED_BY"], :name => "CK_ADDED_BY"
-  add_index "checks", ["CK_CLEARED"], :name => "CK_CLEARED"
-  add_index "checks", ["CK_DATE"], :name => "CK_DATE"
-  add_index "checks", ["CK_EMPL_ADV_CK"], :name => "CK_EMPL_ADV_CK"
-  add_index "checks", ["CK_NUM"], :name => "CK_NUM"
-  add_index "checks", ["CK_OK"], :name => "CK_OK"
-  add_index "checks", ["CK_PAY"], :name => "CK_PAY"
-  add_index "checks", ["CK_PAYEE"], :name => "CK_PAYEE"
-  add_index "checks", ["CK_PERIOD"], :name => "CK_PERIOD"
-  add_index "checks", ["CK_POSTED"], :name => "CK_POSTED"
-  add_index "checks", ["CK_SEQ"], :name => "CK_SEQ", :unique => true
-  add_index "checks", ["CK_TYPE"], :name => "CK_TYPE"
-  add_index "checks", ["CK_VENDOR_NUM"], :name => "CK_VENDOR_NUM"
+  add_index "CHECKS", ["CK_1099"], :name => "CK_1099"
+  add_index "CHECKS", ["CK_ADDED_BY"], :name => "CK_ADDED_BY"
+  add_index "CHECKS", ["CK_CLEARED"], :name => "CK_CLEARED"
+  add_index "CHECKS", ["CK_DATE"], :name => "CK_DATE"
+  add_index "CHECKS", ["CK_EMPL_ADV_CK"], :name => "CK_EMPL_ADV_CK"
+  add_index "CHECKS", ["CK_NUM"], :name => "CK_NUM"
+  add_index "CHECKS", ["CK_OK"], :name => "CK_OK"
+  add_index "CHECKS", ["CK_PAY"], :name => "CK_PAY"
+  add_index "CHECKS", ["CK_PAYEE"], :name => "CK_PAYEE"
+  add_index "CHECKS", ["CK_PERIOD"], :name => "CK_PERIOD"
+  add_index "CHECKS", ["CK_POSTED"], :name => "CK_POSTED"
+  add_index "CHECKS", ["CK_SEQ"], :name => "CK_SEQ", :unique => true
+  add_index "CHECKS", ["CK_TYPE"], :name => "CK_TYPE"
+  add_index "CHECKS", ["CK_VENDOR_NUM"], :name => "CK_VENDOR_NUM"
 
   create_table "CHECK_ITEMS", :primary_key => "CX_SEQ", :force => true do |t|
     t.date     "CX_CK_DATE"
@@ -947,16 +947,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "CX_EDITED_WHEN"
   end
 
-  add_index "check_items", ["CX_AP_NUM"], :name => "CX_AP_NUM"
-  add_index "check_items", ["CX_CK_DATE"], :name => "CX_CK_DATE"
-  add_index "check_items", ["CX_CK_NUM"], :name => "CX_CK_NUM"
-  add_index "check_items", ["CX_COST_SEQ"], :name => "CX_COST_SEQ"
-  add_index "check_items", ["CX_JOB_NUM"], :name => "CX_JOB_NUM"
-  add_index "check_items", ["CX_PERIOD"], :name => "CX_PERIOD"
-  add_index "check_items", ["CX_POSTED"], :name => "CX_POSTED"
-  add_index "check_items", ["CX_SEQ"], :name => "CX_SEQ", :unique => true
-  add_index "check_items", ["CX_TASK"], :name => "CX_TASK"
-  add_index "check_items", ["CX_VENDOR_NUM"], :name => "CX_VENDOR_NUM"
+  add_index "CHECK_ITEMS", ["CX_AP_NUM"], :name => "CX_AP_NUM"
+  add_index "CHECK_ITEMS", ["CX_CK_DATE"], :name => "CX_CK_DATE"
+  add_index "CHECK_ITEMS", ["CX_CK_NUM"], :name => "CX_CK_NUM"
+  add_index "CHECK_ITEMS", ["CX_COST_SEQ"], :name => "CX_COST_SEQ"
+  add_index "CHECK_ITEMS", ["CX_JOB_NUM"], :name => "CX_JOB_NUM"
+  add_index "CHECK_ITEMS", ["CX_PERIOD"], :name => "CX_PERIOD"
+  add_index "CHECK_ITEMS", ["CX_POSTED"], :name => "CX_POSTED"
+  add_index "CHECK_ITEMS", ["CX_SEQ"], :name => "CX_SEQ", :unique => true
+  add_index "CHECK_ITEMS", ["CX_TASK"], :name => "CX_TASK"
+  add_index "CHECK_ITEMS", ["CX_VENDOR_NUM"], :name => "CX_VENDOR_NUM"
 
   create_table "CLAVEN_SALES", :id => false, :force => true do |t|
     t.string  "S_NUM",           :limit => 10
@@ -1148,16 +1148,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "C_FAST_TIME_GRADE_D", :limit => 1
   end
 
-  add_index "clients", ["C_ACTIVE"], :name => "C_ACTIVE"
-  add_index "clients", ["C_AE"], :name => "C_AE"
-  add_index "clients", ["C_CORP_ID"], :name => "C_CORP_ID"
-  add_index "clients", ["C_COST_CENTER"], :name => "C_COST_CENTER"
-  add_index "clients", ["C_DIVISION"], :name => "C_DIVISION"
-  add_index "clients", ["C_NUM"], :name => "C_NUM"
-  add_index "clients", ["C_ORG"], :name => "C_ORG"
-  add_index "clients", ["C_SEQ"], :name => "C_SEQ", :unique => true
-  add_index "clients", ["C_TEAM"], :name => "C_TEAM"
-  add_index "clients", ["C_TYPE"], :name => "C_TYPE"
+  add_index "CLIENTS", ["C_ACTIVE"], :name => "C_ACTIVE"
+  add_index "CLIENTS", ["C_AE"], :name => "C_AE"
+  add_index "CLIENTS", ["C_CORP_ID"], :name => "C_CORP_ID"
+  add_index "CLIENTS", ["C_COST_CENTER"], :name => "C_COST_CENTER"
+  add_index "CLIENTS", ["C_DIVISION"], :name => "C_DIVISION"
+  add_index "CLIENTS", ["C_NUM"], :name => "C_NUM"
+  add_index "CLIENTS", ["C_ORG"], :name => "C_ORG"
+  add_index "CLIENTS", ["C_SEQ"], :name => "C_SEQ", :unique => true
+  add_index "CLIENTS", ["C_TEAM"], :name => "C_TEAM"
+  add_index "CLIENTS", ["C_TYPE"], :name => "C_TYPE"
 
   create_table "CONTACTS", :primary_key => "CON_SEQ", :force => true do |t|
     t.string   "CON_C_NUM",          :limit => 10
@@ -1196,13 +1196,13 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "CON_EDITED_WHEN"
   end
 
-  add_index "contacts", ["CON_C_NUM"], :name => "CON_C_NUM"
-  add_index "contacts", ["CON_DECISION_MAKER"], :name => "CON_DECISION_MAKER"
-  add_index "contacts", ["CON_FULL_NAME"], :name => "CON_FULL_NAME"
-  add_index "contacts", ["CON_KIND"], :name => "CON_KIND"
-  add_index "contacts", ["CON_PHONE_WORK"], :name => "CON_PHONE_WORK"
-  add_index "contacts", ["CON_SEQ"], :name => "CON_SEQ", :unique => true
-  add_index "contacts", ["CON_V_NUM"], :name => "CON_V_NUM"
+  add_index "CONTACTS", ["CON_C_NUM"], :name => "CON_C_NUM"
+  add_index "CONTACTS", ["CON_DECISION_MAKER"], :name => "CON_DECISION_MAKER"
+  add_index "CONTACTS", ["CON_FULL_NAME"], :name => "CON_FULL_NAME"
+  add_index "CONTACTS", ["CON_KIND"], :name => "CON_KIND"
+  add_index "CONTACTS", ["CON_PHONE_WORK"], :name => "CON_PHONE_WORK"
+  add_index "CONTACTS", ["CON_SEQ"], :name => "CON_SEQ", :unique => true
+  add_index "CONTACTS", ["CON_V_NUM"], :name => "CON_V_NUM"
 
   create_table "COSTS", :primary_key => "COST_SEQ", :force => true do |t|
     t.string   "COST_NUM",              :limit => 20
@@ -1262,22 +1262,22 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "COST_POSTED_WHEN"
   end
 
-  add_index "costs", ["COST_AR_DATE"], :name => "COST_AR_DATE"
-  add_index "costs", ["COST_AR_NUM"], :name => "COST_AR_NUM"
-  add_index "costs", ["COST_CLIENT_NUM"], :name => "COST_CLIENT_NUM"
-  add_index "costs", ["COST_DATE"], :name => "COST_DATE"
-  add_index "costs", ["COST_JOB_NUM"], :name => "COST_JOB_NUM"
-  add_index "costs", ["COST_KIND"], :name => "COST_KIND"
-  add_index "costs", ["COST_NUM"], :name => "COST_NUM"
-  add_index "costs", ["COST_OT"], :name => "COST_OT"
-  add_index "costs", ["COST_PERIOD"], :name => "COST_PERIOD"
-  add_index "costs", ["COST_POSTED"], :name => "COST_POSTED"
-  add_index "costs", ["COST_PO_NUM"], :name => "COST_PO_NUM"
-  add_index "costs", ["COST_REF"], :name => "COST_REF"
-  add_index "costs", ["COST_SEQ"], :name => "COST_SEQ", :unique => true
-  add_index "costs", ["COST_STATUS"], :name => "COST_STATUS"
-  add_index "costs", ["COST_TASK"], :name => "COST_TASK"
-  add_index "costs", ["COST_VENDOR"], :name => "COST_VENDOR"
+  add_index "COSTS", ["COST_AR_DATE"], :name => "COST_AR_DATE"
+  add_index "COSTS", ["COST_AR_NUM"], :name => "COST_AR_NUM"
+  add_index "COSTS", ["COST_CLIENT_NUM"], :name => "COST_CLIENT_NUM"
+  add_index "COSTS", ["COST_DATE"], :name => "COST_DATE"
+  add_index "COSTS", ["COST_JOB_NUM"], :name => "COST_JOB_NUM"
+  add_index "COSTS", ["COST_KIND"], :name => "COST_KIND"
+  add_index "COSTS", ["COST_NUM"], :name => "COST_NUM"
+  add_index "COSTS", ["COST_OT"], :name => "COST_OT"
+  add_index "COSTS", ["COST_PERIOD"], :name => "COST_PERIOD"
+  add_index "COSTS", ["COST_POSTED"], :name => "COST_POSTED"
+  add_index "COSTS", ["COST_PO_NUM"], :name => "COST_PO_NUM"
+  add_index "COSTS", ["COST_REF"], :name => "COST_REF"
+  add_index "COSTS", ["COST_SEQ"], :name => "COST_SEQ", :unique => true
+  add_index "COSTS", ["COST_STATUS"], :name => "COST_STATUS"
+  add_index "COSTS", ["COST_TASK"], :name => "COST_TASK"
+  add_index "COSTS", ["COST_VENDOR"], :name => "COST_VENDOR"
 
   create_table "CREDIT_CARD_PREFS", :primary_key => "CC_SEQ", :force => true do |t|
     t.integer "CC_KIND",       :limit => 1
@@ -1290,10 +1290,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "CC_ACCT_NUM",   :limit => 4
   end
 
-  add_index "credit_card_prefs", ["CC_KIND"], :name => "CC_KIND"
-  add_index "credit_card_prefs", ["CC_PAYEE"], :name => "CC_PAYEE"
-  add_index "credit_card_prefs", ["CC_SEQ"], :name => "CC_SEQ", :unique => true
-  add_index "credit_card_prefs", ["CC_VENDOR_NUM"], :name => "CC_VENDOR_NUM"
+  add_index "CREDIT_CARD_PREFS", ["CC_KIND"], :name => "CC_KIND"
+  add_index "CREDIT_CARD_PREFS", ["CC_PAYEE"], :name => "CC_PAYEE"
+  add_index "CREDIT_CARD_PREFS", ["CC_SEQ"], :name => "CC_SEQ", :unique => true
+  add_index "CREDIT_CARD_PREFS", ["CC_VENDOR_NUM"], :name => "CC_VENDOR_NUM"
 
   create_table "DATA_COUNT", :primary_key => "DATA_SEQ", :force => true do |t|
     t.date    "DATA_DATE"
@@ -1309,8 +1309,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.decimal "DATA_TOTAL",    :precision => 15, :scale => 0
   end
 
-  add_index "data_count", ["DATA_DATE"], :name => "DATA_DATE"
-  add_index "data_count", ["DATA_SEQ"], :name => "DATA_SEQ", :unique => true
+  add_index "DATA_COUNT", ["DATA_DATE"], :name => "DATA_DATE"
+  add_index "DATA_COUNT", ["DATA_SEQ"], :name => "DATA_SEQ", :unique => true
 
   create_table "DEPTS", :primary_key => "DEPT_SEQ", :force => true do |t|
     t.string   "DEPT_OFFICE",      :limit => 10
@@ -1324,26 +1324,26 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "DEPT_EDITED_WHEN"
   end
 
-  add_index "depts", ["DEPT_MGR"], :name => "DEPT_MGR"
-  add_index "depts", ["DEPT_NAME"], :name => "DEPT_NAME"
-  add_index "depts", ["DEPT_NUM"], :name => "DEPT_NUM"
-  add_index "depts", ["DEPT_SEQ"], :name => "DEPT_SEQ", :unique => true
+  add_index "DEPTS", ["DEPT_MGR"], :name => "DEPT_MGR"
+  add_index "DEPTS", ["DEPT_NAME"], :name => "DEPT_NAME"
+  add_index "DEPTS", ["DEPT_NUM"], :name => "DEPT_NUM"
+  add_index "DEPTS", ["DEPT_SEQ"], :name => "DEPT_SEQ", :unique => true
 
   create_table "DICTIONARY", :primary_key => "DICT_SEQ", :force => true do |t|
     t.string  "DICT_NAME",    :limit => 12
     t.integer "DICT_LANG_ID"
   end
 
-  add_index "dictionary", ["DICT_NAME"], :name => "DICT_NAME"
-  add_index "dictionary", ["DICT_SEQ"], :name => "DICT_SEQ", :unique => true
+  add_index "DICTIONARY", ["DICT_NAME"], :name => "DICT_NAME"
+  add_index "DICTIONARY", ["DICT_SEQ"], :name => "DICT_SEQ", :unique => true
 
   create_table "DICTIONARY_WORD", :primary_key => "DWORD_SEQ", :force => true do |t|
     t.string "DWORD_DICT_NAME", :limit => 12
     t.string "DWORD_WORD",      :limit => 40
   end
 
-  add_index "dictionary_word", ["DWORD_DICT_NAME"], :name => "DWORD_DICT_NAME"
-  add_index "dictionary_word", ["DWORD_SEQ"], :name => "DWORD_SEQ", :unique => true
+  add_index "DICTIONARY_WORD", ["DWORD_DICT_NAME"], :name => "DWORD_DICT_NAME"
+  add_index "DICTIONARY_WORD", ["DWORD_SEQ"], :name => "DWORD_SEQ", :unique => true
 
   create_table "EST_REVS", :primary_key => "RV_SEQ", :force => true do |t|
     t.string   "RV_JOB_NUM",        :limit => 10
@@ -1375,10 +1375,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "RV_EDITED_WHEN"
   end
 
-  add_index "est_revs", ["RV_JOB_NUM"], :name => "RV_JOB_NUM"
-  add_index "est_revs", ["RV_REVISION"], :name => "RV_REVISION"
-  add_index "est_revs", ["RV_SEQ"], :name => "RV_SEQ", :unique => true
-  add_index "est_revs", ["RV_TASK"], :name => "RV_TASK"
+  add_index "EST_REVS", ["RV_JOB_NUM"], :name => "RV_JOB_NUM"
+  add_index "EST_REVS", ["RV_REVISION"], :name => "RV_REVISION"
+  add_index "EST_REVS", ["RV_SEQ"], :name => "RV_SEQ", :unique => true
+  add_index "EST_REVS", ["RV_TASK"], :name => "RV_TASK"
 
   create_table "FINANCE", :primary_key => "FI_SEQ", :force => true do |t|
     t.string  "FI_AC_NUM",        :limit => 15
@@ -1422,14 +1422,14 @@ ActiveRecord::Schema.define(:version => 0) do
     t.float   "FI_L_PCT5"
   end
 
-  add_index "finance", ["FI_AC_NUM"], :name => "FI_AC_NUM"
-  add_index "finance", ["FI_SEQ"], :name => "FI_SEQ", :unique => true
+  add_index "FINANCE", ["FI_AC_NUM"], :name => "FI_AC_NUM"
+  add_index "FINANCE", ["FI_SEQ"], :name => "FI_SEQ", :unique => true
 
   create_table "F_PREFERENCE", :primary_key => "PR_RSN", :force => true do |t|
     t.integer "prSQLConvFlag", :limit => 1
   end
 
-  add_index "f_preference", ["PR_RSN"], :name => "PR_RSN", :unique => true
+  add_index "F_PREFERENCE", ["PR_RSN"], :name => "PR_RSN", :unique => true
 
   create_table "GROUPS", :primary_key => "GROUP_SEQ", :force => true do |t|
     t.decimal  "GROUP_NUM",                       :precision => 9, :scale => 0
@@ -1441,8 +1441,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "GROUP_EDITED_WHEN"
   end
 
-  add_index "groups", ["GROUP_NUM"], :name => "GROUP_NUM"
-  add_index "groups", ["GROUP_SEQ"], :name => "GROUP_SEQ", :unique => true
+  add_index "GROUPS", ["GROUP_NUM"], :name => "GROUP_NUM"
+  add_index "GROUPS", ["GROUP_SEQ"], :name => "GROUP_SEQ", :unique => true
 
   create_table "HISTORY", :primary_key => "H_SEQ", :force => true do |t|
     t.string   "H_JOB_NUM",     :limit => 10
@@ -1461,10 +1461,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "H_EDITED_WHEN"
   end
 
-  add_index "history", ["H_JOB_NUM"], :name => "H_JOB_NUM"
-  add_index "history", ["H_RESOLVED"], :name => "H_RESOLVED"
-  add_index "history", ["H_SEQ"], :name => "H_SEQ", :unique => true
-  add_index "history", ["H_WHO"], :name => "H_WHO"
+  add_index "HISTORY", ["H_JOB_NUM"], :name => "H_JOB_NUM"
+  add_index "HISTORY", ["H_RESOLVED"], :name => "H_RESOLVED"
+  add_index "HISTORY", ["H_SEQ"], :name => "H_SEQ", :unique => true
+  add_index "HISTORY", ["H_WHO"], :name => "H_WHO"
 
   create_table "HISTORY_CLIENT", :primary_key => "HC_SEQ", :force => true do |t|
     t.string   "HC_CLIENT_NUM",  :limit => 10
@@ -1486,12 +1486,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "HC_EDITED_WHEN"
   end
 
-  add_index "history_client", ["HC_ADDED_BY"], :name => "HC_ADDED_BY"
-  add_index "history_client", ["HC_CLIENT_NUM"], :name => "HC_CLIENT_NUM"
-  add_index "history_client", ["HC_DATE"], :name => "HC_DATE"
-  add_index "history_client", ["HC_KIND"], :name => "HC_KIND"
-  add_index "history_client", ["HC_OK"], :name => "HC_OK"
-  add_index "history_client", ["HC_SEQ"], :name => "HC_SEQ", :unique => true
+  add_index "HISTORY_CLIENT", ["HC_ADDED_BY"], :name => "HC_ADDED_BY"
+  add_index "HISTORY_CLIENT", ["HC_CLIENT_NUM"], :name => "HC_CLIENT_NUM"
+  add_index "HISTORY_CLIENT", ["HC_DATE"], :name => "HC_DATE"
+  add_index "HISTORY_CLIENT", ["HC_KIND"], :name => "HC_KIND"
+  add_index "HISTORY_CLIENT", ["HC_OK"], :name => "HC_OK"
+  add_index "HISTORY_CLIENT", ["HC_SEQ"], :name => "HC_SEQ", :unique => true
 
   create_table "HISTORY_VENDOR", :primary_key => "HV_SEQ", :force => true do |t|
     t.string   "HV_VENDOR_NUM",  :limit => 10
@@ -1511,11 +1511,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "HV_EDITED_WHEN"
   end
 
-  add_index "history_vendor", ["HV_ADDED_BY"], :name => "HV_ADDED_BY"
-  add_index "history_vendor", ["HV_DATE"], :name => "HV_DATE"
-  add_index "history_vendor", ["HV_OK"], :name => "HV_OK"
-  add_index "history_vendor", ["HV_SEQ"], :name => "HV_SEQ", :unique => true
-  add_index "history_vendor", ["HV_VENDOR_NUM"], :name => "HV_VENDOR_NUM"
+  add_index "HISTORY_VENDOR", ["HV_ADDED_BY"], :name => "HV_ADDED_BY"
+  add_index "HISTORY_VENDOR", ["HV_DATE"], :name => "HV_DATE"
+  add_index "HISTORY_VENDOR", ["HV_OK"], :name => "HV_OK"
+  add_index "HISTORY_VENDOR", ["HV_SEQ"], :name => "HV_SEQ", :unique => true
+  add_index "HISTORY_VENDOR", ["HV_VENDOR_NUM"], :name => "HV_VENDOR_NUM"
 
   create_table "INT_ITEMS", :primary_key => "INT_SEQ", :force => true do |t|
     t.string   "INT_ITEM",        :limit => 10
@@ -1532,10 +1532,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "INT_EDITED_WHEN"
   end
 
-  add_index "int_items", ["INT_ITEM"], :name => "INT_ITEM"
-  add_index "int_items", ["INT_KEY"], :name => "INT_KEY"
-  add_index "int_items", ["INT_SEQ"], :name => "INT_SEQ", :unique => true
-  add_index "int_items", ["INT_SIZE"], :name => "INT_SIZE"
+  add_index "INT_ITEMS", ["INT_ITEM"], :name => "INT_ITEM"
+  add_index "INT_ITEMS", ["INT_KEY"], :name => "INT_KEY"
+  add_index "INT_ITEMS", ["INT_SEQ"], :name => "INT_SEQ", :unique => true
+  add_index "INT_ITEMS", ["INT_SIZE"], :name => "INT_SIZE"
 
   create_table "JE", :primary_key => "JE_SEQ", :force => true do |t|
     t.date     "JE_DATE"
@@ -1566,20 +1566,20 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "JE_POSTED_WHEN"
   end
 
-  add_index "je", ["JE_AC_NUM"], :name => "JE_AC_NUM"
-  add_index "je", ["JE_ADDED_BY"], :name => "JE_ADDED_BY"
-  add_index "je", ["JE_CLIENT_NUM"], :name => "JE_CLIENT_NUM"
-  add_index "je", ["JE_DATE"], :name => "JE_DATE"
-  add_index "je", ["JE_GL_REC"], :name => "JE_GL_REC"
-  add_index "je", ["JE_JOB_NUM"], :name => "JE_JOB_NUM"
-  add_index "je", ["JE_KIND"], :name => "JE_KIND"
-  add_index "je", ["JE_PERIOD"], :name => "JE_PERIOD"
-  add_index "je", ["JE_POSTED"], :name => "JE_POSTED"
-  add_index "je", ["JE_RECONCILE"], :name => "JE_RECONCILE"
-  add_index "je", ["JE_REF"], :name => "JE_REF"
-  add_index "je", ["JE_SEQ"], :name => "JE_SEQ", :unique => true
-  add_index "je", ["JE_SOURCE"], :name => "JE_SOURCE"
-  add_index "je", ["JE_VENDOR_NUM"], :name => "JE_VENDOR_NUM"
+  add_index "JE", ["JE_AC_NUM"], :name => "JE_AC_NUM"
+  add_index "JE", ["JE_ADDED_BY"], :name => "JE_ADDED_BY"
+  add_index "JE", ["JE_CLIENT_NUM"], :name => "JE_CLIENT_NUM"
+  add_index "JE", ["JE_DATE"], :name => "JE_DATE"
+  add_index "JE", ["JE_GL_REC"], :name => "JE_GL_REC"
+  add_index "JE", ["JE_JOB_NUM"], :name => "JE_JOB_NUM"
+  add_index "JE", ["JE_KIND"], :name => "JE_KIND"
+  add_index "JE", ["JE_PERIOD"], :name => "JE_PERIOD"
+  add_index "JE", ["JE_POSTED"], :name => "JE_POSTED"
+  add_index "JE", ["JE_RECONCILE"], :name => "JE_RECONCILE"
+  add_index "JE", ["JE_REF"], :name => "JE_REF"
+  add_index "JE", ["JE_SEQ"], :name => "JE_SEQ", :unique => true
+  add_index "JE", ["JE_SOURCE"], :name => "JE_SOURCE"
+  add_index "JE", ["JE_VENDOR_NUM"], :name => "JE_VENDOR_NUM"
 
   create_table "JOBS", :primary_key => "J_SEQ", :force => true do |t|
     t.string   "J_NUM",                :limit => 15
@@ -1736,27 +1736,27 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "J_FAST_SCORE_T",       :limit => 2
   end
 
-  add_index "jobs", ["J_AE_TEAM"], :name => "J_AE_TEAM"
-  add_index "jobs", ["J_BILL_STATUS"], :name => "J_BILL_STATUS"
-  add_index "jobs", ["J_CHARGE_NUM"], :name => "J_CHARGE_NUM"
-  add_index "jobs", ["J_CLIENT_CONTACT"], :name => "J_CLIENT_CONTACT"
-  add_index "jobs", ["J_CLIENT_NUM"], :name => "J_CLIENT_NUM"
-  add_index "jobs", ["J_CLOSED"], :name => "J_CLOSED"
-  add_index "jobs", ["J_DATE_ADDED"], :name => "J_DATE_ADDED"
-  add_index "jobs", ["J_DUE_DATE"], :name => "J_DUE_DATE"
-  add_index "jobs", ["J_NAME"], :name => "J_NAME"
-  add_index "jobs", ["J_NEXT_BILL_DATE"], :name => "J_NEXT_BILL_DATE"
-  add_index "jobs", ["J_NUM"], :name => "J_NUM"
-  add_index "jobs", ["J_PC"], :name => "J_PC"
-  add_index "jobs", ["J_PRIORITY"], :name => "J_PRIORITY"
-  add_index "jobs", ["J_PROD_STATUS"], :name => "J_PROD_STATUS"
-  add_index "jobs", ["J_PROJECT"], :name => "J_PROJECT"
-  add_index "jobs", ["J_SEQ"], :name => "J_SEQ", :unique => true
-  add_index "jobs", ["J_START_DATE"], :name => "J_START_DATE"
-  add_index "jobs", ["J_TYPE"], :name => "J_TYPE"
-  add_index "jobs", ["J_USER_FIELD1"], :name => "J_USER_FIELD1"
-  add_index "jobs", ["J_USER_FIELD2"], :name => "J_USER_FIELD2"
-  add_index "jobs", ["J_WHO"], :name => "J_WHO"
+  add_index "JOBS", ["J_AE_TEAM"], :name => "J_AE_TEAM"
+  add_index "JOBS", ["J_BILL_STATUS"], :name => "J_BILL_STATUS"
+  add_index "JOBS", ["J_CHARGE_NUM"], :name => "J_CHARGE_NUM"
+  add_index "JOBS", ["J_CLIENT_CONTACT"], :name => "J_CLIENT_CONTACT"
+  add_index "JOBS", ["J_CLIENT_NUM"], :name => "J_CLIENT_NUM"
+  add_index "JOBS", ["J_CLOSED"], :name => "J_CLOSED"
+  add_index "JOBS", ["J_DATE_ADDED"], :name => "J_DATE_ADDED"
+  add_index "JOBS", ["J_DUE_DATE"], :name => "J_DUE_DATE"
+  add_index "JOBS", ["J_NAME"], :name => "J_NAME"
+  add_index "JOBS", ["J_NEXT_BILL_DATE"], :name => "J_NEXT_BILL_DATE"
+  add_index "JOBS", ["J_NUM"], :name => "J_NUM"
+  add_index "JOBS", ["J_PC"], :name => "J_PC"
+  add_index "JOBS", ["J_PRIORITY"], :name => "J_PRIORITY"
+  add_index "JOBS", ["J_PROD_STATUS"], :name => "J_PROD_STATUS"
+  add_index "JOBS", ["J_PROJECT"], :name => "J_PROJECT"
+  add_index "JOBS", ["J_SEQ"], :name => "J_SEQ", :unique => true
+  add_index "JOBS", ["J_START_DATE"], :name => "J_START_DATE"
+  add_index "JOBS", ["J_TYPE"], :name => "J_TYPE"
+  add_index "JOBS", ["J_USER_FIELD1"], :name => "J_USER_FIELD1"
+  add_index "JOBS", ["J_USER_FIELD2"], :name => "J_USER_FIELD2"
+  add_index "JOBS", ["J_WHO"], :name => "J_WHO"
 
   create_table "JOB_ORDER", :primary_key => "CB_SEQ", :force => true do |t|
     t.string   "CB_JOB_NUM",       :limit => 10
@@ -1805,9 +1805,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "CB_EDITED_WHEN"
   end
 
-  add_index "job_order", ["CB_CLIENT_NUM"], :name => "CB_CLIENT_NUM"
-  add_index "job_order", ["CB_JOB_NUM"], :name => "CB_JOB_NUM"
-  add_index "job_order", ["CB_SEQ"], :name => "CB_SEQ", :unique => true
+  add_index "JOB_ORDER", ["CB_CLIENT_NUM"], :name => "CB_CLIENT_NUM"
+  add_index "JOB_ORDER", ["CB_JOB_NUM"], :name => "CB_JOB_NUM"
+  add_index "JOB_ORDER", ["CB_SEQ"], :name => "CB_SEQ", :unique => true
 
   create_table "JOB_TASK", :primary_key => "X_SEQ", :force => true do |t|
     t.string   "X_JOB_NUM",        :limit => 10
@@ -1889,17 +1889,17 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "X_EDITED_WHEN"
   end
 
-  add_index "job_task", ["X_DATE_FINISHED"], :name => "X_DATE_FINISHED"
-  add_index "job_task", ["X_DUE_DATE"], :name => "X_DUE_DATE"
-  add_index "job_task", ["X_FINISHED"], :name => "X_FINISHED"
-  add_index "job_task", ["X_JOB_NUM"], :name => "X_JOB_NUM"
-  add_index "job_task", ["X_KEY"], :name => "X_KEY"
-  add_index "job_task", ["X_KEY_RESOURCE"], :name => "X_KEY_RESOURCE"
-  add_index "job_task", ["X_KIND"], :name => "X_KIND"
-  add_index "job_task", ["X_RESOURCE"], :name => "X_RESOURCE"
-  add_index "job_task", ["X_SEQ"], :name => "X_SEQ", :unique => true
-  add_index "job_task", ["X_START_DATE"], :name => "X_START_DATE"
-  add_index "job_task", ["X_TASK"], :name => "X_TASK"
+  add_index "JOB_TASK", ["X_DATE_FINISHED"], :name => "X_DATE_FINISHED"
+  add_index "JOB_TASK", ["X_DUE_DATE"], :name => "X_DUE_DATE"
+  add_index "JOB_TASK", ["X_FINISHED"], :name => "X_FINISHED"
+  add_index "JOB_TASK", ["X_JOB_NUM"], :name => "X_JOB_NUM"
+  add_index "JOB_TASK", ["X_KEY"], :name => "X_KEY"
+  add_index "JOB_TASK", ["X_KEY_RESOURCE"], :name => "X_KEY_RESOURCE"
+  add_index "JOB_TASK", ["X_KIND"], :name => "X_KIND"
+  add_index "JOB_TASK", ["X_RESOURCE"], :name => "X_RESOURCE"
+  add_index "JOB_TASK", ["X_SEQ"], :name => "X_SEQ", :unique => true
+  add_index "JOB_TASK", ["X_START_DATE"], :name => "X_START_DATE"
+  add_index "JOB_TASK", ["X_TASK"], :name => "X_TASK"
 
   create_table "JOB_TYPES", :primary_key => "TYPE_SEQ", :force => true do |t|
     t.string   "TYPE_CODE",           :limit => 15
@@ -2003,16 +2003,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "TYPE_REVIEWER",       :limit => 10
   end
 
-  add_index "job_types", ["TYPE_CODE"], :name => "TYPE_CODE"
-  add_index "job_types", ["TYPE_SEQ"], :name => "TYPE_SEQ", :unique => true
+  add_index "JOB_TYPES", ["TYPE_CODE"], :name => "TYPE_CODE"
+  add_index "JOB_TYPES", ["TYPE_SEQ"], :name => "TYPE_SEQ", :unique => true
 
   create_table "JOB_USER_FIELDS", :primary_key => "JU_SEQ", :force => true do |t|
     t.string "JU_FIELD", :limit => 20
     t.string "JU_VALUE", :limit => 20
   end
 
-  add_index "job_user_fields", ["JU_FIELD"], :name => "JU_FIELD"
-  add_index "job_user_fields", ["JU_SEQ"], :name => "JU_SEQ", :unique => true
+  add_index "JOB_USER_FIELDS", ["JU_FIELD"], :name => "JU_FIELD"
+  add_index "JOB_USER_FIELDS", ["JU_SEQ"], :name => "JU_SEQ", :unique => true
 
   create_table "LOG", :primary_key => "LOG_SEQ", :force => true do |t|
     t.date     "LOG_DATE"
@@ -2021,8 +2021,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.text     "LOG_NOTES"
   end
 
-  add_index "log", ["LOG_DATE"], :name => "LOG_DATE"
-  add_index "log", ["LOG_SEQ"], :name => "LOG_SEQ", :unique => true
+  add_index "LOG", ["LOG_DATE"], :name => "LOG_DATE"
+  add_index "LOG", ["LOG_SEQ"], :name => "LOG_SEQ", :unique => true
 
   create_table "MEDIA_BRIEFS", :primary_key => "BR_SEQ", :force => true do |t|
     t.string   "BR_CAMPAIGN",          :limit => 10
@@ -2068,10 +2068,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "BR_APPROVED_DATE"
   end
 
-  add_index "media_briefs", ["BR_BUD_CABLE"], :name => "BR_BUD_CABLE"
-  add_index "media_briefs", ["BR_CAMPAIGN"], :name => "BR_CAMPAIGN"
-  add_index "media_briefs", ["BR_CLIENT_NUM"], :name => "BR_CLIENT_NUM"
-  add_index "media_briefs", ["BR_SEQ"], :name => "BR_SEQ", :unique => true
+  add_index "MEDIA_BRIEFS", ["BR_BUD_CABLE"], :name => "BR_BUD_CABLE"
+  add_index "MEDIA_BRIEFS", ["BR_CAMPAIGN"], :name => "BR_CAMPAIGN"
+  add_index "MEDIA_BRIEFS", ["BR_CLIENT_NUM"], :name => "BR_CLIENT_NUM"
+  add_index "MEDIA_BRIEFS", ["BR_SEQ"], :name => "BR_SEQ", :unique => true
 
   create_table "MEDIA_EST", :primary_key => "ME_SEQ", :force => true do |t|
     t.string   "ME_NUM",           :limit => 10
@@ -2107,13 +2107,13 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "ME_EDITED_WHEN"
   end
 
-  add_index "media_est", ["ME_BUYER"], :name => "ME_BUYER"
-  add_index "media_est", ["ME_CAMPAIGN"], :name => "ME_CAMPAIGN"
-  add_index "media_est", ["ME_CLIENT_NUM"], :name => "ME_CLIENT_NUM"
-  add_index "media_est", ["ME_DATE"], :name => "ME_DATE"
-  add_index "media_est", ["ME_NUM"], :name => "ME_NUM"
-  add_index "media_est", ["ME_SEQ"], :name => "ME_SEQ", :unique => true
-  add_index "media_est", ["ME_TYPE"], :name => "ME_TYPE"
+  add_index "MEDIA_EST", ["ME_BUYER"], :name => "ME_BUYER"
+  add_index "MEDIA_EST", ["ME_CAMPAIGN"], :name => "ME_CAMPAIGN"
+  add_index "MEDIA_EST", ["ME_CLIENT_NUM"], :name => "ME_CLIENT_NUM"
+  add_index "MEDIA_EST", ["ME_DATE"], :name => "ME_DATE"
+  add_index "MEDIA_EST", ["ME_NUM"], :name => "ME_NUM"
+  add_index "MEDIA_EST", ["ME_SEQ"], :name => "ME_SEQ", :unique => true
+  add_index "MEDIA_EST", ["ME_TYPE"], :name => "ME_TYPE"
 
   create_table "MEDIA_EST_ITEMS", :primary_key => "MI_SEQ", :force => true do |t|
     t.string   "MI_ME_NUM",        :limit => 10
@@ -2144,12 +2144,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "MI_EDITED_WHEN"
   end
 
-  add_index "media_est_items", ["MI_CLOSE_DATE"], :name => "MI_CLOSE_DATE"
-  add_index "media_est_items", ["MI_MATERIALS_DUE"], :name => "MI_MATERIALS_DUE"
-  add_index "media_est_items", ["MI_ME_NUM"], :name => "MI_ME_NUM"
-  add_index "media_est_items", ["MI_PUB"], :name => "MI_PUB"
-  add_index "media_est_items", ["MI_RUN_DATE"], :name => "MI_RUN_DATE"
-  add_index "media_est_items", ["MI_SEQ"], :name => "MI_SEQ", :unique => true
+  add_index "MEDIA_EST_ITEMS", ["MI_CLOSE_DATE"], :name => "MI_CLOSE_DATE"
+  add_index "MEDIA_EST_ITEMS", ["MI_MATERIALS_DUE"], :name => "MI_MATERIALS_DUE"
+  add_index "MEDIA_EST_ITEMS", ["MI_ME_NUM"], :name => "MI_ME_NUM"
+  add_index "MEDIA_EST_ITEMS", ["MI_PUB"], :name => "MI_PUB"
+  add_index "MEDIA_EST_ITEMS", ["MI_RUN_DATE"], :name => "MI_RUN_DATE"
+  add_index "MEDIA_EST_ITEMS", ["MI_SEQ"], :name => "MI_SEQ", :unique => true
 
   create_table "MEDIA_ITEMS", :primary_key => "MX_SEQ", :force => true do |t|
     t.string   "MX_CAMPAIGN_NUM",  :limit => 10
@@ -2296,12 +2296,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "MX_EDITED_WHEN"
   end
 
-  add_index "media_items", ["MX_CAMPAIGN_NUM"], :name => "MX_CAMPAIGN_NUM"
-  add_index "media_items", ["MX_MEDIA1"], :name => "MX_MEDIA1"
-  add_index "media_items", ["MX_M_NUM"], :name => "MX_M_NUM"
-  add_index "media_items", ["MX_SEQ"], :name => "MX_SEQ", :unique => true
-  add_index "media_items", ["MX_SPACE_CLOSE3"], :name => "MX_SPACE_CLOSE3"
-  add_index "media_items", ["MX_STATION"], :name => "MX_STATION"
+  add_index "MEDIA_ITEMS", ["MX_CAMPAIGN_NUM"], :name => "MX_CAMPAIGN_NUM"
+  add_index "MEDIA_ITEMS", ["MX_MEDIA1"], :name => "MX_MEDIA1"
+  add_index "MEDIA_ITEMS", ["MX_M_NUM"], :name => "MX_M_NUM"
+  add_index "MEDIA_ITEMS", ["MX_SEQ"], :name => "MX_SEQ", :unique => true
+  add_index "MEDIA_ITEMS", ["MX_SPACE_CLOSE3"], :name => "MX_SPACE_CLOSE3"
+  add_index "MEDIA_ITEMS", ["MX_STATION"], :name => "MX_STATION"
 
   create_table "MEDIA_PLANS", :primary_key => "M_SEQ", :force => true do |t|
     t.string   "M_CAMPAIGN",      :limit => 10
@@ -2402,16 +2402,16 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "M_EDITED_WHEN"
   end
 
-  add_index "media_plans", ["M_AE_TEAM"], :name => "M_AE_TEAM"
-  add_index "media_plans", ["M_APPROVED_DATE"], :name => "M_APPROVED_DATE"
-  add_index "media_plans", ["M_CAMPAIGN"], :name => "M_CAMPAIGN"
-  add_index "media_plans", ["M_CLIENT_NUM"], :name => "M_CLIENT_NUM"
-  add_index "media_plans", ["M_JOB_NUM"], :name => "M_JOB_NUM"
-  add_index "media_plans", ["M_NAME"], :name => "M_NAME"
-  add_index "media_plans", ["M_NUM"], :name => "M_NUM"
-  add_index "media_plans", ["M_SEQ"], :name => "M_SEQ", :unique => true
-  add_index "media_plans", ["M_START_DATE"], :name => "M_START_DATE"
-  add_index "media_plans", ["M_TYPE"], :name => "M_TYPE"
+  add_index "MEDIA_PLANS", ["M_AE_TEAM"], :name => "M_AE_TEAM"
+  add_index "MEDIA_PLANS", ["M_APPROVED_DATE"], :name => "M_APPROVED_DATE"
+  add_index "MEDIA_PLANS", ["M_CAMPAIGN"], :name => "M_CAMPAIGN"
+  add_index "MEDIA_PLANS", ["M_CLIENT_NUM"], :name => "M_CLIENT_NUM"
+  add_index "MEDIA_PLANS", ["M_JOB_NUM"], :name => "M_JOB_NUM"
+  add_index "MEDIA_PLANS", ["M_NAME"], :name => "M_NAME"
+  add_index "MEDIA_PLANS", ["M_NUM"], :name => "M_NUM"
+  add_index "MEDIA_PLANS", ["M_SEQ"], :name => "M_SEQ", :unique => true
+  add_index "MEDIA_PLANS", ["M_START_DATE"], :name => "M_START_DATE"
+  add_index "MEDIA_PLANS", ["M_TYPE"], :name => "M_TYPE"
 
   create_table "MEDIA_PREFS", :primary_key => "MPF_SEQ", :force => true do |t|
     t.decimal  "MPF_NUM",                             :precision => 15, :scale => 0
@@ -2474,8 +2474,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "MPF_EDITED_WHEN"
   end
 
-  add_index "media_prefs", ["MPF_KIND"], :name => "MPF_KIND"
-  add_index "media_prefs", ["MPF_SEQ"], :name => "MPF_SEQ", :unique => true
+  add_index "MEDIA_PREFS", ["MPF_KIND"], :name => "MPF_KIND"
+  add_index "MEDIA_PREFS", ["MPF_SEQ"], :name => "MPF_SEQ", :unique => true
 
   create_table "MEETINGS", :primary_key => "MEET_SEQ", :force => true do |t|
     t.date     "MEET_DATE"
@@ -2502,10 +2502,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "MEET_EDITED_WHEN"
   end
 
-  add_index "meetings", ["MEET_CLIENT_NUM"], :name => "MEET_CLIENT_NUM"
-  add_index "meetings", ["MEET_DATE"], :name => "MEET_DATE"
-  add_index "meetings", ["MEET_JOB_NUM"], :name => "MEET_JOB_NUM"
-  add_index "meetings", ["MEET_SEQ"], :name => "MEET_SEQ", :unique => true
+  add_index "MEETINGS", ["MEET_CLIENT_NUM"], :name => "MEET_CLIENT_NUM"
+  add_index "MEETINGS", ["MEET_DATE"], :name => "MEET_DATE"
+  add_index "MEETINGS", ["MEET_JOB_NUM"], :name => "MEET_JOB_NUM"
+  add_index "MEETINGS", ["MEET_SEQ"], :name => "MEET_SEQ", :unique => true
 
   create_table "MLINK_LOG", :primary_key => "MLOG_SEQ", :force => true do |t|
     t.datetime "MLOG_DATE"
@@ -2514,8 +2514,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "MLOG_ADDED_BY", :limit => 10
   end
 
-  add_index "mlink_log", ["MLOG_DATE"], :name => "MLOG_DATE"
-  add_index "mlink_log", ["MLOG_SEQ"], :name => "MLOG_SEQ", :unique => true
+  add_index "MLINK_LOG", ["MLOG_DATE"], :name => "MLOG_DATE"
+  add_index "MLINK_LOG", ["MLOG_SEQ"], :name => "MLOG_SEQ", :unique => true
 
   create_table "MLINK_PREFS", :primary_key => "MLINK_SEQ", :force => true do |t|
     t.integer  "MLINK_ENABLE_LOG",      :limit => 1
@@ -2548,7 +2548,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "MLINK_EDITED_WHEN"
   end
 
-  add_index "mlink_prefs", ["MLINK_SEQ"], :name => "MLINK_SEQ", :unique => true
+  add_index "MLINK_PREFS", ["MLINK_SEQ"], :name => "MLINK_SEQ", :unique => true
 
   create_table "ODBCUSERS", :id => false, :force => true do |t|
     t.string  "ODBCUSERNAME",   :limit => 32
@@ -2556,7 +2556,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "ODBCACCESSMASK"
   end
 
-  add_index "odbcusers", ["ODBCUSERNAME"], :name => "ODBCUSERNAME"
+  add_index "ODBCUSERS", ["ODBCUSERNAME"], :name => "ODBCUSERNAME"
 
   create_table "OUTBOX", :primary_key => "OUT_SEQ", :force => true do |t|
     t.string   "OUT_FROM_EMAIL", :limit => 40
@@ -2573,9 +2573,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "OUT_OK",         :limit => 1
   end
 
-  add_index "outbox", ["OUT_OK"], :name => "OUT_OK"
-  add_index "outbox", ["OUT_SEND_DATE"], :name => "OUT_SEND_DATE"
-  add_index "outbox", ["OUT_SEQ"], :name => "OUT_SEQ", :unique => true
+  add_index "OUTBOX", ["OUT_OK"], :name => "OUT_OK"
+  add_index "OUTBOX", ["OUT_SEND_DATE"], :name => "OUT_SEND_DATE"
+  add_index "OUTBOX", ["OUT_SEQ"], :name => "OUT_SEQ", :unique => true
 
   create_table "PALM_CATS", :primary_key => "PALM_CAT_SEQ", :force => true do |t|
     t.string  "PALM_CAT_NAME", :limit => 15
@@ -2583,9 +2583,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "PALM_CAT_USER", :limit => 10
   end
 
-  add_index "palm_cats", ["PALM_CAT_ID"], :name => "PALM_CAT_ID"
-  add_index "palm_cats", ["PALM_CAT_SEQ"], :name => "PALM_CAT_SEQ", :unique => true
-  add_index "palm_cats", ["PALM_CAT_USER"], :name => "PALM_CAT_USER"
+  add_index "PALM_CATS", ["PALM_CAT_ID"], :name => "PALM_CAT_ID"
+  add_index "PALM_CATS", ["PALM_CAT_SEQ"], :name => "PALM_CAT_SEQ", :unique => true
+  add_index "PALM_CATS", ["PALM_CAT_USER"], :name => "PALM_CAT_USER"
 
   create_table "PALM_JOBS", :primary_key => "PALM_JOB_SEQ", :force => true do |t|
     t.integer "PALM_JOB_ID"
@@ -2597,9 +2597,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "PALM_JOB_PLUS",     :limit => 1
   end
 
-  add_index "palm_jobs", ["PALM_JOB_NUM"], :name => "PALM_JOB_NUM"
-  add_index "palm_jobs", ["PALM_JOB_SEQ"], :name => "PALM_JOB_SEQ", :unique => true
-  add_index "palm_jobs", ["PALM_JOB_USER"], :name => "PALM_JOB_USER"
+  add_index "PALM_JOBS", ["PALM_JOB_NUM"], :name => "PALM_JOB_NUM"
+  add_index "PALM_JOBS", ["PALM_JOB_SEQ"], :name => "PALM_JOB_SEQ", :unique => true
+  add_index "PALM_JOBS", ["PALM_JOB_USER"], :name => "PALM_JOB_USER"
 
   create_table "PALM_TASKS", :primary_key => "PALM_TASK_SEQ", :force => true do |t|
     t.string  "PALM_TASK_CODE",    :limit => 4
@@ -2610,10 +2610,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "PALM_TASK_ATTRIBS", :limit => 4
   end
 
-  add_index "palm_tasks", ["PALM_TASK_CODE"], :name => "PALM_TASK_CODE"
-  add_index "palm_tasks", ["PALM_TASK_ID"], :name => "PALM_TASK_ID"
-  add_index "palm_tasks", ["PALM_TASK_SEQ"], :name => "PALM_TASK_SEQ", :unique => true
-  add_index "palm_tasks", ["PALM_TASK_USER"], :name => "PALM_TASK_USER"
+  add_index "PALM_TASKS", ["PALM_TASK_CODE"], :name => "PALM_TASK_CODE"
+  add_index "PALM_TASKS", ["PALM_TASK_ID"], :name => "PALM_TASK_ID"
+  add_index "PALM_TASKS", ["PALM_TASK_SEQ"], :name => "PALM_TASK_SEQ", :unique => true
+  add_index "PALM_TASKS", ["PALM_TASK_USER"], :name => "PALM_TASK_USER"
 
   create_table "PAYMENTS", :primary_key => "PAY_SEQ", :force => true do |t|
     t.string   "PAY_CLIENT_NUM",  :limit => 10
@@ -2640,17 +2640,17 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PAY_POSTED_WHEN"
   end
 
-  add_index "payments", ["PAY_ADDED_BY"], :name => "PAY_ADDED_BY"
-  add_index "payments", ["PAY_ADDED_WHEN"], :name => "PAY_ADDED_WHEN"
-  add_index "payments", ["PAY_BATCH"], :name => "PAY_BATCH"
-  add_index "payments", ["PAY_CHECK_DATE"], :name => "PAY_CHECK_DATE"
-  add_index "payments", ["PAY_CHECK_NUM"], :name => "PAY_CHECK_NUM"
-  add_index "payments", ["PAY_CLIENT_NUM"], :name => "PAY_CLIENT_NUM"
-  add_index "payments", ["PAY_DATE"], :name => "PAY_DATE"
-  add_index "payments", ["PAY_OK"], :name => "PAY_OK"
-  add_index "payments", ["PAY_PERIOD"], :name => "PAY_PERIOD"
-  add_index "payments", ["PAY_POSTED"], :name => "PAY_POSTED"
-  add_index "payments", ["PAY_SEQ"], :name => "PAY_SEQ", :unique => true
+  add_index "PAYMENTS", ["PAY_ADDED_BY"], :name => "PAY_ADDED_BY"
+  add_index "PAYMENTS", ["PAY_ADDED_WHEN"], :name => "PAY_ADDED_WHEN"
+  add_index "PAYMENTS", ["PAY_BATCH"], :name => "PAY_BATCH"
+  add_index "PAYMENTS", ["PAY_CHECK_DATE"], :name => "PAY_CHECK_DATE"
+  add_index "PAYMENTS", ["PAY_CHECK_NUM"], :name => "PAY_CHECK_NUM"
+  add_index "PAYMENTS", ["PAY_CLIENT_NUM"], :name => "PAY_CLIENT_NUM"
+  add_index "PAYMENTS", ["PAY_DATE"], :name => "PAY_DATE"
+  add_index "PAYMENTS", ["PAY_OK"], :name => "PAY_OK"
+  add_index "PAYMENTS", ["PAY_PERIOD"], :name => "PAY_PERIOD"
+  add_index "PAYMENTS", ["PAY_POSTED"], :name => "PAY_POSTED"
+  add_index "PAYMENTS", ["PAY_SEQ"], :name => "PAY_SEQ", :unique => true
 
   create_table "PAYMENT_ITEMS", :primary_key => "PX_SEQ", :force => true do |t|
     t.string   "PX_AR_NUM",      :limit => 10
@@ -2668,12 +2668,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PX_EDITED_WHEN"
   end
 
-  add_index "payment_items", ["PX_AR_NUM"], :name => "PX_AR_NUM"
-  add_index "payment_items", ["PX_CHECK_NUM"], :name => "PX_CHECK_NUM"
-  add_index "payment_items", ["PX_CLIENT_NUM"], :name => "PX_CLIENT_NUM"
-  add_index "payment_items", ["PX_PERIOD"], :name => "PX_PERIOD"
-  add_index "payment_items", ["PX_POSTED"], :name => "PX_POSTED"
-  add_index "payment_items", ["PX_SEQ"], :name => "PX_SEQ", :unique => true
+  add_index "PAYMENT_ITEMS", ["PX_AR_NUM"], :name => "PX_AR_NUM"
+  add_index "PAYMENT_ITEMS", ["PX_CHECK_NUM"], :name => "PX_CHECK_NUM"
+  add_index "PAYMENT_ITEMS", ["PX_CLIENT_NUM"], :name => "PX_CLIENT_NUM"
+  add_index "PAYMENT_ITEMS", ["PX_PERIOD"], :name => "PX_PERIOD"
+  add_index "PAYMENT_ITEMS", ["PX_POSTED"], :name => "PX_POSTED"
+  add_index "PAYMENT_ITEMS", ["PX_SEQ"], :name => "PX_SEQ", :unique => true
 
   create_table "PC", :primary_key => "PC_SEQ", :force => true do |t|
     t.string   "PC_NUM",           :limit => 10
@@ -2693,8 +2693,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "PC_BILL_ADDRESS3", :limit => 60
   end
 
-  add_index "pc", ["PC_NUM"], :name => "PC_NUM"
-  add_index "pc", ["PC_SEQ"], :name => "PC_SEQ", :unique => true
+  add_index "PC", ["PC_NUM"], :name => "PC_NUM"
+  add_index "PC", ["PC_SEQ"], :name => "PC_SEQ", :unique => true
 
   create_table "PICTURES", :primary_key => "PICTURE_SEQ", :force => true do |t|
     t.string   "PICTURE_NUM",         :limit => 10
@@ -2706,8 +2706,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PICTURE_EDITED_WHEN"
   end
 
-  add_index "pictures", ["PICTURE_NUM"], :name => "PICTURE_NUM"
-  add_index "pictures", ["PICTURE_SEQ"], :name => "PICTURE_SEQ", :unique => true
+  add_index "PICTURES", ["PICTURE_NUM"], :name => "PICTURE_NUM"
+  add_index "PICTURES", ["PICTURE_SEQ"], :name => "PICTURE_SEQ", :unique => true
 
   create_table "PO_ITEMS", :primary_key => "POX_SEQ", :force => true do |t|
     t.integer  "POX_LINE_NUMBER"
@@ -2759,20 +2759,20 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "POX_TAXABLE2",    :limit => 1
   end
 
-  add_index "po_items", ["POX_AR_NUM"], :name => "POX_AR_NUM"
-  add_index "po_items", ["POX_BILL_DATE"], :name => "POX_BILL_DATE"
-  add_index "po_items", ["POX_CLIENT_NUM"], :name => "POX_CLIENT_NUM"
-  add_index "po_items", ["POX_DUE_DATE"], :name => "POX_DUE_DATE"
-  add_index "po_items", ["POX_DUE_DATE2"], :name => "POX_DUE_DATE2"
-  add_index "po_items", ["POX_ISSUE_DATE2"], :name => "POX_ISSUE_DATE2"
-  add_index "po_items", ["POX_JOB_NUM"], :name => "POX_JOB_NUM"
-  add_index "po_items", ["POX_KEY"], :name => "POX_KEY"
-  add_index "po_items", ["POX_PO_NUM"], :name => "POX_PO_NUM"
-  add_index "po_items", ["POX_PROGRAM"], :name => "POX_PROGRAM"
-  add_index "po_items", ["POX_RUN_DATE"], :name => "POX_RUN_DATE"
-  add_index "po_items", ["POX_SEQ"], :name => "POX_SEQ", :unique => true
-  add_index "po_items", ["POX_TRADE"], :name => "POX_TRADE"
-  add_index "po_items", ["POX_TYPE"], :name => "POX_TYPE"
+  add_index "PO_ITEMS", ["POX_AR_NUM"], :name => "POX_AR_NUM"
+  add_index "PO_ITEMS", ["POX_BILL_DATE"], :name => "POX_BILL_DATE"
+  add_index "PO_ITEMS", ["POX_CLIENT_NUM"], :name => "POX_CLIENT_NUM"
+  add_index "PO_ITEMS", ["POX_DUE_DATE"], :name => "POX_DUE_DATE"
+  add_index "PO_ITEMS", ["POX_DUE_DATE2"], :name => "POX_DUE_DATE2"
+  add_index "PO_ITEMS", ["POX_ISSUE_DATE2"], :name => "POX_ISSUE_DATE2"
+  add_index "PO_ITEMS", ["POX_JOB_NUM"], :name => "POX_JOB_NUM"
+  add_index "PO_ITEMS", ["POX_KEY"], :name => "POX_KEY"
+  add_index "PO_ITEMS", ["POX_PO_NUM"], :name => "POX_PO_NUM"
+  add_index "PO_ITEMS", ["POX_PROGRAM"], :name => "POX_PROGRAM"
+  add_index "PO_ITEMS", ["POX_RUN_DATE"], :name => "POX_RUN_DATE"
+  add_index "PO_ITEMS", ["POX_SEQ"], :name => "POX_SEQ", :unique => true
+  add_index "PO_ITEMS", ["POX_TRADE"], :name => "POX_TRADE"
+  add_index "PO_ITEMS", ["POX_TYPE"], :name => "POX_TYPE"
 
   create_table "PO_TEMPLATE", :primary_key => "PT_SEQ", :force => true do |t|
     t.string   "PT_TEMPLATE",         :limit => 20
@@ -2837,9 +2837,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "PT_TERMS_PRINT5",     :limit => 1
   end
 
-  add_index "po_template", ["PT_KIND"], :name => "PT_KIND"
-  add_index "po_template", ["PT_SEQ"], :name => "PT_SEQ", :unique => true
-  add_index "po_template", ["PT_TEMPLATE"], :name => "PT_TEMPLATE"
+  add_index "PO_TEMPLATE", ["PT_KIND"], :name => "PT_KIND"
+  add_index "PO_TEMPLATE", ["PT_SEQ"], :name => "PT_SEQ", :unique => true
+  add_index "PO_TEMPLATE", ["PT_TEMPLATE"], :name => "PT_TEMPLATE"
 
   create_table "PREFS", :primary_key => "PREF_SEQ", :force => true do |t|
     t.integer  "PREF_GL",                   :limit => 1
@@ -3111,8 +3111,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "PREF_EXPIRE_PW"
   end
 
-  add_index "prefs", ["PREF_CODE"], :name => "PREF_CODE"
-  add_index "prefs", ["PREF_SEQ"], :name => "PREF_SEQ", :unique => true
+  add_index "PREFS", ["PREF_CODE"], :name => "PREF_CODE"
+  add_index "PREFS", ["PREF_SEQ"], :name => "PREF_SEQ", :unique => true
 
   create_table "PRINT_SPECS", :primary_key => "PSPEC_SEQ", :force => true do |t|
     t.string   "PSPEC_JOB_NUM",          :limit => 10
@@ -3272,9 +3272,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PSX_EDITED_WHEN"
   end
 
-  add_index "print_specs", ["PSPEC_JOB_NUM"], :name => "PSPEC_JOB_NUM"
-  add_index "print_specs", ["PSPEC_SEQ"], :name => "PSPEC_SEQ", :unique => true
-  add_index "print_specs", ["PSX_COVR2_PROCESS"], :name => "PSX_COVR2_PROCESS"
+  add_index "PRINT_SPECS", ["PSPEC_JOB_NUM"], :name => "PSPEC_JOB_NUM"
+  add_index "PRINT_SPECS", ["PSPEC_SEQ"], :name => "PSPEC_SEQ", :unique => true
+  add_index "PRINT_SPECS", ["PSX_COVR2_PROCESS"], :name => "PSX_COVR2_PROCESS"
 
   create_table "PRINT_SPEC_VALUES", :primary_key => "PSV_SEQ", :force => true do |t|
     t.string   "PSV_CAT",         :limit => 25
@@ -3285,8 +3285,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PSV_EDITED_WHEN"
   end
 
-  add_index "print_spec_values", ["PSV_CAT"], :name => "PSV_CAT"
-  add_index "print_spec_values", ["PSV_SEQ"], :name => "PSV_SEQ", :unique => true
+  add_index "PRINT_SPEC_VALUES", ["PSV_CAT"], :name => "PSV_CAT"
+  add_index "PRINT_SPEC_VALUES", ["PSV_SEQ"], :name => "PSV_SEQ", :unique => true
 
   create_table "PROGRAMS", :primary_key => "PGM_SEQ", :force => true do |t|
     t.string   "PGM_CODE",        :limit => 20
@@ -3316,12 +3316,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PGM_EDITED_WHEN"
   end
 
-  add_index "programs", ["PGM_CLIENT_NUM"], :name => "PGM_CLIENT_NUM"
-  add_index "programs", ["PGM_CODE"], :name => "PGM_CODE"
-  add_index "programs", ["PGM_KEY"], :name => "PGM_KEY"
-  add_index "programs", ["PGM_SEQ"], :name => "PGM_SEQ", :unique => true
-  add_index "programs", ["PGM_TIME_PGM"], :name => "PGM_TIME_PGM"
-  add_index "programs", ["PGM_TYPE"], :name => "PGM_TYPE"
+  add_index "PROGRAMS", ["PGM_CLIENT_NUM"], :name => "PGM_CLIENT_NUM"
+  add_index "PROGRAMS", ["PGM_CODE"], :name => "PGM_CODE"
+  add_index "PROGRAMS", ["PGM_KEY"], :name => "PGM_KEY"
+  add_index "PROGRAMS", ["PGM_SEQ"], :name => "PGM_SEQ", :unique => true
+  add_index "PROGRAMS", ["PGM_TIME_PGM"], :name => "PGM_TIME_PGM"
+  add_index "PROGRAMS", ["PGM_TYPE"], :name => "PGM_TYPE"
 
   create_table "PROJECTS", :primary_key => "PROJ_SEQ", :force => true do |t|
     t.string   "PROJ_CLIENT_NUM",  :limit => 10
@@ -3347,9 +3347,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PROJ_EDITED_WHEN"
   end
 
-  add_index "projects", ["PROJ_CLIENT_NUM"], :name => "PROJ_CLIENT_NUM"
-  add_index "projects", ["PROJ_NAME"], :name => "PROJ_NAME"
-  add_index "projects", ["PROJ_SEQ"], :name => "PROJ_SEQ", :unique => true
+  add_index "PROJECTS", ["PROJ_CLIENT_NUM"], :name => "PROJ_CLIENT_NUM"
+  add_index "PROJECTS", ["PROJ_NAME"], :name => "PROJ_NAME"
+  add_index "PROJECTS", ["PROJ_SEQ"], :name => "PROJ_SEQ", :unique => true
 
   create_table "PROPOSALS", :primary_key => "PROPS_SEQ", :force => true do |t|
     t.string   "PROPS_CLIENT_NUM",    :limit => 10
@@ -3390,10 +3390,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "PROPS_REVIEWER",      :limit => 10
   end
 
-  add_index "proposals", ["PROPS_CLIENT_NUM"], :name => "PROPS_CLIENT_NUM"
-  add_index "proposals", ["PROPS_DUE_DATE"], :name => "PROPS_DUE_DATE"
-  add_index "proposals", ["PROPS_SEQ"], :name => "PROPS_SEQ", :unique => true
-  add_index "proposals", ["PROPS_START_DATE"], :name => "PROPS_START_DATE"
+  add_index "PROPOSALS", ["PROPS_CLIENT_NUM"], :name => "PROPS_CLIENT_NUM"
+  add_index "PROPOSALS", ["PROPS_DUE_DATE"], :name => "PROPS_DUE_DATE"
+  add_index "PROPOSALS", ["PROPS_SEQ"], :name => "PROPS_SEQ", :unique => true
+  add_index "PROPOSALS", ["PROPS_START_DATE"], :name => "PROPS_START_DATE"
 
   create_table "PURCHASE_ORDER", :primary_key => "PO_SEQ", :force => true do |t|
     t.string   "PO_NUM",           :limit => 12
@@ -3484,19 +3484,19 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "PO_PT_TEMPLATE",   :limit => 20
   end
 
-  add_index "purchase_order", ["PO_APPROVED"], :name => "PO_APPROVED"
-  add_index "purchase_order", ["PO_CLIENT_NUM"], :name => "PO_CLIENT_NUM"
-  add_index "purchase_order", ["PO_CLOSED"], :name => "PO_CLOSED"
-  add_index "purchase_order", ["PO_DATE"], :name => "PO_DATE"
-  add_index "purchase_order", ["PO_DUE_DATE"], :name => "PO_DUE_DATE"
-  add_index "purchase_order", ["PO_FIELD1"], :name => "PO_FIELD1"
-  add_index "purchase_order", ["PO_JOB_NUM"], :name => "PO_JOB_NUM"
-  add_index "purchase_order", ["PO_NUM"], :name => "PO_NUM"
-  add_index "purchase_order", ["PO_PERIOD"], :name => "PO_PERIOD"
-  add_index "purchase_order", ["PO_SEQ"], :name => "PO_SEQ", :unique => true
-  add_index "purchase_order", ["PO_TASK"], :name => "PO_TASK"
-  add_index "purchase_order", ["PO_TYPE"], :name => "PO_TYPE"
-  add_index "purchase_order", ["PO_VENDOR_NUM"], :name => "PO_VENDOR_NUM"
+  add_index "PURCHASE_ORDER", ["PO_APPROVED"], :name => "PO_APPROVED"
+  add_index "PURCHASE_ORDER", ["PO_CLIENT_NUM"], :name => "PO_CLIENT_NUM"
+  add_index "PURCHASE_ORDER", ["PO_CLOSED"], :name => "PO_CLOSED"
+  add_index "PURCHASE_ORDER", ["PO_DATE"], :name => "PO_DATE"
+  add_index "PURCHASE_ORDER", ["PO_DUE_DATE"], :name => "PO_DUE_DATE"
+  add_index "PURCHASE_ORDER", ["PO_FIELD1"], :name => "PO_FIELD1"
+  add_index "PURCHASE_ORDER", ["PO_JOB_NUM"], :name => "PO_JOB_NUM"
+  add_index "PURCHASE_ORDER", ["PO_NUM"], :name => "PO_NUM"
+  add_index "PURCHASE_ORDER", ["PO_PERIOD"], :name => "PO_PERIOD"
+  add_index "PURCHASE_ORDER", ["PO_SEQ"], :name => "PO_SEQ", :unique => true
+  add_index "PURCHASE_ORDER", ["PO_TASK"], :name => "PO_TASK"
+  add_index "PURCHASE_ORDER", ["PO_TYPE"], :name => "PO_TYPE"
+  add_index "PURCHASE_ORDER", ["PO_VENDOR_NUM"], :name => "PO_VENDOR_NUM"
 
   create_table "RATES", :primary_key => "RATE_SEQ", :force => true do |t|
     t.string   "RATE_STAFF",       :limit => 10
@@ -3511,9 +3511,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "RATE_EDITED_WHEN"
   end
 
-  add_index "rates", ["RATE_KEY"], :name => "RATE_KEY"
-  add_index "rates", ["RATE_SEQ"], :name => "RATE_SEQ", :unique => true
-  add_index "rates", ["RATE_STAFF"], :name => "RATE_STAFF"
+  add_index "RATES", ["RATE_KEY"], :name => "RATE_KEY"
+  add_index "RATES", ["RATE_SEQ"], :name => "RATE_SEQ", :unique => true
+  add_index "RATES", ["RATE_STAFF"], :name => "RATE_STAFF"
 
   create_table "RECUR_AP", :primary_key => "RAP_SEQ", :force => true do |t|
     t.string   "RAP_VENDOR",      :limit => 10
@@ -3541,9 +3541,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "RAP_EDITED_WHEN"
   end
 
-  add_index "recur_ap", ["RAP_DATE"], :name => "RAP_DATE"
-  add_index "recur_ap", ["RAP_SEQ"], :name => "RAP_SEQ", :unique => true
-  add_index "recur_ap", ["RAP_VENDOR"], :name => "RAP_VENDOR"
+  add_index "RECUR_AP", ["RAP_DATE"], :name => "RAP_DATE"
+  add_index "RECUR_AP", ["RAP_SEQ"], :name => "RAP_SEQ", :unique => true
+  add_index "RECUR_AP", ["RAP_VENDOR"], :name => "RAP_VENDOR"
 
   create_table "RECUR_AR", :primary_key => "RAR_SEQ", :force => true do |t|
     t.string   "RAR_CLIENT_NUM",  :limit => 10
@@ -3594,10 +3594,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "RAR_EDITED_WHEN"
   end
 
-  add_index "recur_ar", ["RAR_CLIENT_NUM"], :name => "RAR_CLIENT_NUM"
-  add_index "recur_ar", ["RAR_DATE"], :name => "RAR_DATE"
-  add_index "recur_ar", ["RAR_JOB_NUM"], :name => "RAR_JOB_NUM"
-  add_index "recur_ar", ["RAR_SEQ"], :name => "RAR_SEQ", :unique => true
+  add_index "RECUR_AR", ["RAR_CLIENT_NUM"], :name => "RAR_CLIENT_NUM"
+  add_index "RECUR_AR", ["RAR_DATE"], :name => "RAR_DATE"
+  add_index "RECUR_AR", ["RAR_JOB_NUM"], :name => "RAR_JOB_NUM"
+  add_index "RECUR_AR", ["RAR_SEQ"], :name => "RAR_SEQ", :unique => true
 
   create_table "RETAINERS", :id => false, :force => true do |t|
     t.string   "RET_CLIENT_NUM",  :limit => 10
@@ -3667,7 +3667,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "RET_EDITED_WHEN"
   end
 
-  add_index "retainers", ["RET_CLIENT_NUM"], :name => "RET_CLIENT_NUM"
+  add_index "RETAINERS", ["RET_CLIENT_NUM"], :name => "RET_CLIENT_NUM"
 
   create_table "RFQS", :primary_key => "RFQ_SEQ", :force => true do |t|
     t.string   "RFQ_NUM",                :limit => 12
@@ -3711,8 +3711,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "RFQ_PROD_CONTACT_PH",    :limit => 40
   end
 
-  add_index "rfqs", ["RFQ_JOB_NUM"], :name => "RFQ_JOB_NUM"
-  add_index "rfqs", ["RFQ_SEQ"], :name => "RFQ_SEQ", :unique => true
+  add_index "RFQS", ["RFQ_JOB_NUM"], :name => "RFQ_JOB_NUM"
+  add_index "RFQS", ["RFQ_SEQ"], :name => "RFQ_SEQ", :unique => true
 
   create_table "RFQ_ITEMS", :primary_key => "RFQX_SEQ", :force => true do |t|
     t.integer "RFQX_LINE_NUMBER"
@@ -3734,9 +3734,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "RFQX_TYPE",        :limit => 20
   end
 
-  add_index "rfq_items", ["RFQX_NUM"], :name => "RFQX_NUM"
-  add_index "rfq_items", ["RFQX_SEQ"], :name => "RFQX_SEQ", :unique => true
-  add_index "rfq_items", ["RFQX_VENDOR2"], :name => "RFQX_VENDOR2"
+  add_index "RFQ_ITEMS", ["RFQX_NUM"], :name => "RFQX_NUM"
+  add_index "RFQ_ITEMS", ["RFQX_SEQ"], :name => "RFQX_SEQ", :unique => true
+  add_index "RFQ_ITEMS", ["RFQX_VENDOR2"], :name => "RFQX_VENDOR2"
 
   create_table "RFQ_SKUS", :primary_key => "RFQSKU_SEQ", :force => true do |t|
     t.decimal "RFQSKU_PART_NUM",                 :precision => 15, :scale => 0
@@ -3750,9 +3750,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "RFQSKU_JOB_TYPE",   :limit => 15
   end
 
-  add_index "rfq_skus", ["RFQSKU_NAME"], :name => "RFQSKU_NAME"
-  add_index "rfq_skus", ["RFQSKU_PART_NUM"], :name => "RFQSKU_PART_NUM"
-  add_index "rfq_skus", ["RFQSKU_SEQ"], :name => "RFQSKU_SEQ", :unique => true
+  add_index "RFQ_SKUS", ["RFQSKU_NAME"], :name => "RFQSKU_NAME"
+  add_index "RFQ_SKUS", ["RFQSKU_PART_NUM"], :name => "RFQSKU_PART_NUM"
+  add_index "RFQ_SKUS", ["RFQSKU_SEQ"], :name => "RFQSKU_SEQ", :unique => true
 
   create_table "RFQ_VENDORS", :primary_key => "RFQV_SEQ", :force => true do |t|
     t.string  "RFQV_NUM",        :limit => 12
@@ -3765,8 +3765,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "RFQV_TYPE",       :limit => 20
   end
 
-  add_index "rfq_vendors", ["RFQV_NUM"], :name => "RFQV_NUM"
-  add_index "rfq_vendors", ["RFQV_SEQ"], :name => "RFQV_SEQ", :unique => true
+  add_index "RFQ_VENDORS", ["RFQV_NUM"], :name => "RFQV_NUM"
+  add_index "RFQ_VENDORS", ["RFQV_SEQ"], :name => "RFQV_SEQ", :unique => true
 
   create_table "SALES_ACTIONS", :primary_key => "SACT_SEQ", :force => true do |t|
     t.integer  "SACT_KIND",        :limit => 1
@@ -3790,11 +3790,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "SACT_EDITED_WHEN"
   end
 
-  add_index "sales_actions", ["SACT_CLIENT_NUM"], :name => "SACT_CLIENT_NUM"
-  add_index "sales_actions", ["SACT_DATE"], :name => "SACT_DATE"
-  add_index "sales_actions", ["SACT_FROM_STAFF"], :name => "SACT_FROM_STAFF"
-  add_index "sales_actions", ["SACT_KIND"], :name => "SACT_KIND"
-  add_index "sales_actions", ["SACT_SEQ"], :name => "SACT_SEQ", :unique => true
+  add_index "SALES_ACTIONS", ["SACT_CLIENT_NUM"], :name => "SACT_CLIENT_NUM"
+  add_index "SALES_ACTIONS", ["SACT_DATE"], :name => "SACT_DATE"
+  add_index "SALES_ACTIONS", ["SACT_FROM_STAFF"], :name => "SACT_FROM_STAFF"
+  add_index "SALES_ACTIONS", ["SACT_KIND"], :name => "SACT_KIND"
+  add_index "SALES_ACTIONS", ["SACT_SEQ"], :name => "SACT_SEQ", :unique => true
 
   create_table "SALES_CAMPAIGNS", :primary_key => "SCAM_SEQ", :force => true do |t|
     t.string   "SCAM_ID",           :limit => 20
@@ -3817,9 +3817,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "SCAM_EDITED_WHEN"
   end
 
-  add_index "sales_campaigns", ["SCAM_CLIENT_NUM"], :name => "SCAM_CLIENT_NUM"
-  add_index "sales_campaigns", ["SCAM_ID"], :name => "SCAM_ID"
-  add_index "sales_campaigns", ["SCAM_SEQ"], :name => "SCAM_SEQ", :unique => true
+  add_index "SALES_CAMPAIGNS", ["SCAM_CLIENT_NUM"], :name => "SCAM_CLIENT_NUM"
+  add_index "SALES_CAMPAIGNS", ["SCAM_ID"], :name => "SCAM_ID"
+  add_index "SALES_CAMPAIGNS", ["SCAM_SEQ"], :name => "SCAM_SEQ", :unique => true
 
   create_table "SALES_LETTERS", :primary_key => "SLTR_SEQ", :force => true do |t|
     t.string   "SLTR_ID",          :limit => 20
@@ -3843,11 +3843,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "SLTR_EDITED_WHEN"
   end
 
-  add_index "sales_letters", ["SLTR_CLIENT_NUM"], :name => "SLTR_CLIENT_NUM"
-  add_index "sales_letters", ["SLTR_EDITED_WHEN"], :name => "SLTR_EDITED_WHEN"
-  add_index "sales_letters", ["SLTR_ID"], :name => "SLTR_ID"
-  add_index "sales_letters", ["SLTR_KIND"], :name => "SLTR_KIND"
-  add_index "sales_letters", ["SLTR_SEQ"], :name => "SLTR_SEQ", :unique => true
+  add_index "SALES_LETTERS", ["SLTR_CLIENT_NUM"], :name => "SLTR_CLIENT_NUM"
+  add_index "SALES_LETTERS", ["SLTR_EDITED_WHEN"], :name => "SLTR_EDITED_WHEN"
+  add_index "SALES_LETTERS", ["SLTR_ID"], :name => "SLTR_ID"
+  add_index "SALES_LETTERS", ["SLTR_KIND"], :name => "SLTR_KIND"
+  add_index "SALES_LETTERS", ["SLTR_SEQ"], :name => "SLTR_SEQ", :unique => true
 
   create_table "SCHEDULE_CHART", :primary_key => "SC_SEQ", :force => true do |t|
     t.string "SC_J_NUM",      :limit => 10
@@ -3866,8 +3866,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string "SC_CLIENT_NUM", :limit => 10
   end
 
-  add_index "schedule_chart", ["SC_J_NUM"], :name => "SC_J_NUM"
-  add_index "schedule_chart", ["SC_SEQ"], :name => "SC_SEQ", :unique => true
+  add_index "SCHEDULE_CHART", ["SC_J_NUM"], :name => "SC_J_NUM"
+  add_index "SCHEDULE_CHART", ["SC_SEQ"], :name => "SC_SEQ", :unique => true
 
   create_table "SCHEDULE_HEADER", :primary_key => "SH_SEQ", :force => true do |t|
     t.date   "SH_DATE1"
@@ -3888,8 +3888,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string "SH_12",         :limit => 10
   end
 
-  add_index "schedule_header", ["SH_JOB_NUM"], :name => "SH_JOB_NUM"
-  add_index "schedule_header", ["SH_SEQ"], :name => "SH_SEQ", :unique => true
+  add_index "SCHEDULE_HEADER", ["SH_JOB_NUM"], :name => "SH_JOB_NUM"
+  add_index "SCHEDULE_HEADER", ["SH_SEQ"], :name => "SH_SEQ", :unique => true
 
   create_table "SCHED_REVS", :primary_key => "SCV_SEQ", :force => true do |t|
     t.string   "SCV_JOB_NUM",        :limit => 10
@@ -3921,7 +3921,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "SCV_EDITED_WHEN"
   end
 
-  add_index "sched_revs", ["SCV_SEQ"], :name => "SCV_SEQ", :unique => true
+  add_index "SCHED_REVS", ["SCV_SEQ"], :name => "SCV_SEQ", :unique => true
 
   create_table "STAFF", :primary_key => "S_SEQ", :force => true do |t|
     t.string   "S_INITIALS",             :limit => 10
@@ -4030,12 +4030,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.date     "S_WEB_ACCESS_EXPIRES"
   end
 
-  add_index "staff", ["S_DEPT"], :name => "S_DEPT"
-  add_index "staff", ["S_INITIALS"], :name => "S_INITIALS"
-  add_index "staff", ["S_NAME"], :name => "S_NAME"
-  add_index "staff", ["S_SEQ"], :name => "S_SEQ", :unique => true
-  add_index "staff", ["S_TASK"], :name => "S_TASK"
-  add_index "staff", ["S_TEAM"], :name => "S_TEAM"
+  add_index "STAFF", ["S_DEPT"], :name => "S_DEPT"
+  add_index "STAFF", ["S_INITIALS"], :name => "S_INITIALS"
+  add_index "STAFF", ["S_NAME"], :name => "S_NAME"
+  add_index "STAFF", ["S_SEQ"], :name => "S_SEQ", :unique => true
+  add_index "STAFF", ["S_TASK"], :name => "S_TASK"
+  add_index "STAFF", ["S_TEAM"], :name => "S_TEAM"
 
   create_table "STATEMENTS", :primary_key => "ST_SEQ", :force => true do |t|
     t.date    "ST_DATE"
@@ -4050,7 +4050,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "ST_DIVISION",   :limit => 10
   end
 
-  add_index "statements", ["ST_SEQ"], :name => "ST_SEQ", :unique => true
+  add_index "STATEMENTS", ["ST_SEQ"], :name => "ST_SEQ", :unique => true
 
   create_table "STATIONS", :primary_key => "PUB_SEQ", :force => true do |t|
     t.string   "PUB_CODE",         :limit => 20
@@ -4081,11 +4081,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "PUB_EDITED_WHEN"
   end
 
-  add_index "stations", ["PUB_CODE"], :name => "PUB_CODE"
-  add_index "stations", ["PUB_NAME"], :name => "PUB_NAME"
-  add_index "stations", ["PUB_SEQ"], :name => "PUB_SEQ", :unique => true
-  add_index "stations", ["PUB_TYPE"], :name => "PUB_TYPE"
-  add_index "stations", ["PUB_VENDOR_NUM"], :name => "PUB_VENDOR_NUM"
+  add_index "STATIONS", ["PUB_CODE"], :name => "PUB_CODE"
+  add_index "STATIONS", ["PUB_NAME"], :name => "PUB_NAME"
+  add_index "STATIONS", ["PUB_SEQ"], :name => "PUB_SEQ", :unique => true
+  add_index "STATIONS", ["PUB_TYPE"], :name => "PUB_TYPE"
+  add_index "STATIONS", ["PUB_VENDOR_NUM"], :name => "PUB_VENDOR_NUM"
 
   create_table "STATUS_CODES", :primary_key => "STATUS_SEQ", :force => true do |t|
     t.decimal  "STATUS_NUM",                         :precision => 9, :scale => 0
@@ -4106,8 +4106,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "STATUS_EDITED_WHEN"
   end
 
-  add_index "status_codes", ["STATUS_NUM"], :name => "STATUS_NUM"
-  add_index "status_codes", ["STATUS_SEQ"], :name => "STATUS_SEQ", :unique => true
+  add_index "STATUS_CODES", ["STATUS_NUM"], :name => "STATUS_NUM"
+  add_index "STATUS_CODES", ["STATUS_SEQ"], :name => "STATUS_SEQ", :unique => true
 
   create_table "SUB_CLASSES", :primary_key => "SUB_SEQ", :force => true do |t|
     t.decimal  "SUB_NUM",                       :precision => 15, :scale => 0
@@ -4118,8 +4118,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "SUB_EDITED_WHEN"
   end
 
-  add_index "sub_classes", ["SUB_NUM"], :name => "SUB_NUM"
-  add_index "sub_classes", ["SUB_SEQ"], :name => "SUB_SEQ", :unique => true
+  add_index "SUB_CLASSES", ["SUB_NUM"], :name => "SUB_NUM"
+  add_index "SUB_CLASSES", ["SUB_SEQ"], :name => "SUB_SEQ", :unique => true
 
   create_table "TASK_TABLE", :primary_key => "T_SEQ", :force => true do |t|
     t.string   "T_TASK",            :limit => 4
@@ -4166,8 +4166,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "T_UTIL_CAT",        :limit => 1
   end
 
-  add_index "task_table", ["T_SEQ"], :name => "T_SEQ", :unique => true
-  add_index "task_table", ["T_TASK"], :name => "T_TASK"
+  add_index "TASK_TABLE", ["T_SEQ"], :name => "T_SEQ", :unique => true
+  add_index "TASK_TABLE", ["T_TASK"], :name => "T_TASK"
 
   create_table "TEMP_TASKS", :primary_key => "TT_SEQ", :force => true do |t|
     t.string   "TT_TYPE",        :limit => 15
@@ -4187,9 +4187,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "TT_EDITED_WHEN"
   end
 
-  add_index "temp_tasks", ["TT_SEQ"], :name => "TT_SEQ", :unique => true
-  add_index "temp_tasks", ["TT_TASK"], :name => "TT_TASK"
-  add_index "temp_tasks", ["TT_TYPE"], :name => "TT_TYPE"
+  add_index "TEMP_TASKS", ["TT_SEQ"], :name => "TT_SEQ", :unique => true
+  add_index "TEMP_TASKS", ["TT_TASK"], :name => "TT_TASK"
+  add_index "TEMP_TASKS", ["TT_TYPE"], :name => "TT_TYPE"
 
   create_table "THOUGHTS", :primary_key => "MSG_SEQ", :force => true do |t|
     t.date   "MSG_DATE"
@@ -4198,8 +4198,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string "MSG_DAILY_INFO_CTR", :limit => 80
   end
 
-  add_index "thoughts", ["MSG_DATE"], :name => "MSG_DATE"
-  add_index "thoughts", ["MSG_SEQ"], :name => "MSG_SEQ", :unique => true
+  add_index "THOUGHTS", ["MSG_DATE"], :name => "MSG_DATE"
+  add_index "THOUGHTS", ["MSG_SEQ"], :name => "MSG_SEQ", :unique => true
 
   create_table "TIME_CARD", :primary_key => "TIME_SEQ", :force => true do |t|
     t.time    "TIME_START1"
@@ -4370,10 +4370,10 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "TIME_NEW",        :limit => 50
   end
 
-  add_index "time_card", ["TIME_DATE"], :name => "TIME_DATE"
-  add_index "time_card", ["TIME_KEY"], :name => "TIME_KEY"
-  add_index "time_card", ["TIME_SEQ"], :name => "TIME_SEQ", :unique => true
-  add_index "time_card", ["TIME_STAFF"], :name => "TIME_STAFF"
+  add_index "TIME_CARD", ["TIME_DATE"], :name => "TIME_DATE"
+  add_index "TIME_CARD", ["TIME_KEY"], :name => "TIME_KEY"
+  add_index "TIME_CARD", ["TIME_SEQ"], :name => "TIME_SEQ", :unique => true
+  add_index "TIME_CARD", ["TIME_STAFF"], :name => "TIME_STAFF"
 
   create_table "TIME_IMPORT", :primary_key => "TM_SEQ", :force => true do |t|
     t.date    "TM_DATE"
@@ -4394,12 +4394,12 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer "TM_OT",            :limit => 1
   end
 
-  add_index "time_import", ["TM_DATE"], :name => "TM_DATE"
-  add_index "time_import", ["TM_JOB_NUM"], :name => "TM_JOB_NUM"
-  add_index "time_import", ["TM_PALM_ID"], :name => "TM_PALM_ID"
-  add_index "time_import", ["TM_SEQ"], :name => "TM_SEQ", :unique => true
-  add_index "time_import", ["TM_STAFF"], :name => "TM_STAFF"
-  add_index "time_import", ["TM_TASK"], :name => "TM_TASK"
+  add_index "TIME_IMPORT", ["TM_DATE"], :name => "TM_DATE"
+  add_index "TIME_IMPORT", ["TM_JOB_NUM"], :name => "TM_JOB_NUM"
+  add_index "TIME_IMPORT", ["TM_PALM_ID"], :name => "TM_PALM_ID"
+  add_index "TIME_IMPORT", ["TM_SEQ"], :name => "TM_SEQ", :unique => true
+  add_index "TIME_IMPORT", ["TM_STAFF"], :name => "TM_STAFF"
+  add_index "TIME_IMPORT", ["TM_TASK"], :name => "TM_TASK"
 
   create_table "UN_CHECKS", :primary_key => "UNCKS_SEQ", :force => true do |t|
     t.decimal "UNCKS_DEBIT",                   :precision => 9, :scale => 2
@@ -4414,7 +4414,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.decimal "UNCKS_AC_NUM",                  :precision => 9, :scale => 2
   end
 
-  add_index "un_checks", ["UNCKS_SEQ"], :name => "UNCKS_SEQ", :unique => true
+  add_index "UN_CHECKS", ["UNCKS_SEQ"], :name => "UNCKS_SEQ", :unique => true
 
   create_table "USER_INFO_CTR", :primary_key => "UI_SEQ", :force => true do |t|
     t.string "UI_WORK",   :limit => 4
@@ -4432,8 +4432,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string "UI_LABEL6", :limit => 25
   end
 
-  add_index "user_info_ctr", ["UI_SEQ"], :name => "UI_SEQ", :unique => true
-  add_index "user_info_ctr", ["UI_WORK"], :name => "UI_WORK"
+  add_index "USER_INFO_CTR", ["UI_SEQ"], :name => "UI_SEQ", :unique => true
+  add_index "USER_INFO_CTR", ["UI_WORK"], :name => "UI_WORK"
 
   create_table "VENDORS", :primary_key => "V_SEQ", :force => true do |t|
     t.string   "V_NUM",          :limit => 10
@@ -4545,11 +4545,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "V_RFQ_TYPE",     :limit => 20
   end
 
-  add_index "vendors", ["V_ACTIVE"], :name => "V_ACTIVE"
-  add_index "vendors", ["V_MEDIA_VNUM"], :name => "V_MEDIA_VNUM"
-  add_index "vendors", ["V_NUM"], :name => "V_NUM"
-  add_index "vendors", ["V_ORG"], :name => "V_ORG"
-  add_index "vendors", ["V_SEQ"], :name => "V_SEQ", :unique => true
+  add_index "VENDORS", ["V_ACTIVE"], :name => "V_ACTIVE"
+  add_index "VENDORS", ["V_MEDIA_VNUM"], :name => "V_MEDIA_VNUM"
+  add_index "VENDORS", ["V_NUM"], :name => "V_NUM"
+  add_index "VENDORS", ["V_ORG"], :name => "V_ORG"
+  add_index "VENDORS", ["V_SEQ"], :name => "V_SEQ", :unique => true
 
   create_table "VERSION", :primary_key => "VER_SEQ", :force => true do |t|
     t.integer "VER_PROGRAM",  :limit => 1
@@ -4561,7 +4561,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.decimal "VER_DEMO",                    :precision => 15, :scale => 0
   end
 
-  add_index "version", ["VER_SEQ"], :name => "VER_SEQ", :unique => true
+  add_index "VERSION", ["VER_SEQ"], :name => "VER_SEQ", :unique => true
 
   create_table "WEB_IP_LOG", :primary_key => "WIP_SEQ", :force => true do |t|
     t.string   "WIP_IP",       :limit => 20
@@ -4570,9 +4570,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "WIP_DATETIME"
   end
 
-  add_index "web_ip_log", ["WIP_DATE"], :name => "WIP_DATE"
-  add_index "web_ip_log", ["WIP_IP"], :name => "WIP_IP"
-  add_index "web_ip_log", ["WIP_SEQ"], :name => "WIP_SEQ", :unique => true
+  add_index "WEB_IP_LOG", ["WIP_DATE"], :name => "WIP_DATE"
+  add_index "WEB_IP_LOG", ["WIP_IP"], :name => "WIP_IP"
+  add_index "WEB_IP_LOG", ["WIP_SEQ"], :name => "WIP_SEQ", :unique => true
 
   create_table "WEB_LOG", :primary_key => "WLOG_SEQ", :force => true do |t|
     t.datetime "WLOG_DATETIME"
@@ -4587,9 +4587,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "WLOG_HOUR",     :limit => 1
   end
 
-  add_index "web_log", ["WLOG_DATE"], :name => "WLOG_DATE"
-  add_index "web_log", ["WLOG_SEQ"], :name => "WLOG_SEQ", :unique => true
-  add_index "web_log", ["WLOG_USER"], :name => "WLOG_USER"
+  add_index "WEB_LOG", ["WLOG_DATE"], :name => "WLOG_DATE"
+  add_index "WEB_LOG", ["WLOG_SEQ"], :name => "WLOG_SEQ", :unique => true
+  add_index "WEB_LOG", ["WLOG_USER"], :name => "WLOG_USER"
 
   create_table "WEB_PREFS", :primary_key => "WP_SEQ", :force => true do |t|
     t.integer  "WP_BELL_ON_HITS",      :limit => 1
@@ -4667,7 +4667,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.text     "WP_SMTP_AUTH_PW"
   end
 
-  add_index "web_prefs", ["WP_SEQ"], :name => "WP_SEQ", :unique => true
+  add_index "WEB_PREFS", ["WP_SEQ"], :name => "WP_SEQ", :unique => true
 
   create_table "WEB_USERS", :primary_key => "WU_SEQ", :force => true do |t|
     t.string   "WU_WORK",            :limit => 4
@@ -4744,8 +4744,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "WU_EDITED_WHEN"
   end
 
-  add_index "web_users", ["WU_SEQ"], :name => "WU_SEQ", :unique => true
-  add_index "web_users", ["WU_WORK"], :name => "WU_WORK"
+  add_index "WEB_USERS", ["WU_SEQ"], :name => "WU_SEQ", :unique => true
+  add_index "WEB_USERS", ["WU_WORK"], :name => "WU_WORK"
 
   create_table "WORKING", :primary_key => "W_SEQ", :force => true do |t|
     t.string   "W_WORK",                 :limit => 4
@@ -5038,9 +5038,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "W_A_HIDE_RATES_BILL",    :limit => 1
   end
 
-  add_index "working", ["W_LOGGED_IN"], :name => "W_LOGGED_IN"
-  add_index "working", ["W_SEQ"], :name => "W_SEQ", :unique => true
-  add_index "working", ["W_WORK"], :name => "W_WORK"
+  add_index "WORKING", ["W_LOGGED_IN"], :name => "W_LOGGED_IN"
+  add_index "WORKING", ["W_SEQ"], :name => "W_SEQ", :unique => true
+  add_index "WORKING", ["W_WORK"], :name => "W_WORK"
 
   create_table "WORKSHEET", :primary_key => "EST_SEQ", :force => true do |t|
     t.string   "EST_KEY",         :limit => 15
@@ -5075,9 +5075,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "EST_EDITED_WHEN"
   end
 
-  add_index "worksheet", ["EST_JOB_NUM"], :name => "EST_JOB_NUM"
-  add_index "worksheet", ["EST_KEY"], :name => "EST_KEY"
-  add_index "worksheet", ["EST_SEQ"], :name => "EST_SEQ", :unique => true
+  add_index "WORKSHEET", ["EST_JOB_NUM"], :name => "EST_JOB_NUM"
+  add_index "WORKSHEET", ["EST_KEY"], :name => "EST_KEY"
+  add_index "WORKSHEET", ["EST_SEQ"], :name => "EST_SEQ", :unique => true
 
   create_table "WORK_ORDER", :primary_key => "WO_SEQ", :force => true do |t|
     t.string  "WO_JOB_NUM",       :limit => 10
@@ -5123,9 +5123,9 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string  "WO_ADR_NAME",      :limit => 20
   end
 
-  add_index "work_order", ["WO_CLIENT_NUM"], :name => "WO_CLIENT_NUM"
-  add_index "work_order", ["WO_JOB_NUM"], :name => "WO_JOB_NUM"
-  add_index "work_order", ["WO_SEQ"], :name => "WO_SEQ", :unique => true
+  add_index "WORK_ORDER", ["WO_CLIENT_NUM"], :name => "WO_CLIENT_NUM"
+  add_index "WORK_ORDER", ["WO_JOB_NUM"], :name => "WO_JOB_NUM"
+  add_index "WORK_ORDER", ["WO_SEQ"], :name => "WO_SEQ", :unique => true
 
   create_table "Y1099", :primary_key => "Y_SEQ", :force => true do |t|
     t.string  "Y_NAME1",       :limit => 40
@@ -5152,6 +5152,70 @@ ActiveRecord::Schema.define(:version => 0) do
     t.decimal "Y_RENT2",                     :precision => 9,  :scale => 2
   end
 
-  add_index "y1099", ["Y_SEQ"], :name => "Y_SEQ", :unique => true
+  add_index "Y1099", ["Y_SEQ"], :name => "Y_SEQ", :unique => true
+
+  create_table "active_admin_comments", :force => true do |t|
+    t.string   "resource_id",   :null => false
+    t.string   "resource_type", :null => false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "namespace"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
