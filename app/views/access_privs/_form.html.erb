@@ -1,0 +1,17 @@
+<%= form_for(@access_priv) do |f| %>
+  <% if @access_priv.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@access_priv.errors.count, "error") %> prohibited this access_priv from being saved:</h2>
+
+      <ul>
+      <% @access_priv.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
